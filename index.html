@@ -41,6 +41,36 @@
     }
     </script>
 
+    <!-- FAQ Schema for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What chartered accountancy services does Bijay Pokhrel & Associates offer in Nepal?",
+          "acceptedAnswer": { "@type": "Answer", "text": "We provide statutory and internal audit, NFRS implementation and reporting, tax advisory and compliance, NRB and banking compliance, and corporate and transaction advisory services across Nepal." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Bijay Pokhrel & Associates an ICAN-registered audit firm?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes, we are a member firm of the Institute of Chartered Accountants of Nepal (ICAN) and an approved auditor under Nepal Rastra Bank and SEBON regulations." }
+        },
+        {
+          "@type": "Question",
+          "name": "Which industries does the firm serve?",
+          "acceptedAnswer": { "@type": "Answer", "text": "We serve banking and finance, insurance, manufacturing, hydropower and energy, healthcare, education, hospitality, real estate, retail, and NGOs/INGOs." }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I book a consultation with the firm?",
+          "acceptedAnswer": { "@type": "Answer", "text": "You can book a complimentary consultation through the contact form on our website, by calling +977-9862145832, or by emailing info@bijaypokhrel-associates.com." }
+        }
+      ]
+    }
+    </script>
+
     <!-- FIX #3: Replaced Inter/Manrope with more distinctive Playfair Display + DM Sans pairing -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -718,7 +748,97 @@
             .stats-bar { grid-template-columns: 1fr 1fr; gap: 1.25rem; }
             .industry-grid { grid-template-columns: 1fr 1fr; }
             .cta-actions { flex-direction: column; align-items: center; }
+            .clients-grid, .affil-grid, .case-grid, .insights-grid, .experience-grid { grid-template-columns: repeat(2,1fr) !important; }
         }
+
+        /* =============================================
+           NEW: CLIENTS / TRUST WALL
+        ============================================= */
+        .clients { padding: 6rem 0; background: var(--bg-secondary); }
+        .clients-grid { display: grid; grid-template-columns: repeat(6,1fr); gap: 1.25rem; align-items: center; }
+        .client-logo {
+            display: flex; align-items: center; justify-content: center;
+            height: 84px; border: 1px solid var(--border); border-radius: 10px;
+            background: var(--bg-primary); color: var(--text-muted);
+            font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1rem;
+            filter: grayscale(100%); opacity: 0.6; transition: var(--transition);
+        }
+        .client-logo:hover { filter: grayscale(0%); opacity: 1; border-color: var(--gold); color: var(--gold); transform: translateY(-3px); }
+        .clients-note { text-align: center; margin-top: 2.5rem; font-family: 'DM Mono', monospace; font-size: 0.85rem; color: var(--text-muted); letter-spacing: 0.04em; }
+        .clients-note strong { color: var(--gold); }
+
+        /* =============================================
+           NEW: PROFESSIONAL AFFILIATIONS
+        ============================================= */
+        .affiliations { padding: 6rem 0; background: var(--bg-primary); }
+        .affil-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem; }
+        .affil-card {
+            padding: 1.75rem; text-align: center; border: 1px solid var(--border);
+            border-radius: 12px; background: var(--bg-secondary); transition: var(--transition);
+        }
+        .affil-card:hover { border-color: var(--gold); transform: translateY(-4px); box-shadow: var(--shadow-md); }
+        .affil-card i { font-size: 1.8rem; color: var(--gold); margin-bottom: 0.85rem; display: block; }
+        .affil-card h4 { font-size: 0.92rem; margin-bottom: 0.35rem; }
+        .affil-card p { font-size: 0.8rem; color: var(--text-secondary); }
+
+        /* =============================================
+           NEW: EXPERIENCE & EXPERTISE COUNTERS
+        ============================================= */
+        .experience { padding: 6rem 0; background: var(--primary); position: relative; overflow: hidden; }
+        .experience::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse 60% 80% at 20% 30%, rgba(184,134,11,0.12) 0%, transparent 70%);
+        }
+        .experience .section-header h2, .experience .section-header p { color: rgba(255,255,255,0.9); }
+        .experience .section-header p { color: rgba(255,255,255,0.55); }
+        .experience-grid { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(6,1fr); gap: 1.5rem; }
+        .exp-stat { text-align: center; padding: 1.5rem 1rem; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; }
+        .exp-num {
+            font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 700;
+            color: #fff; display: block; line-height: 1;
+        }
+        .exp-num sup { font-size: 1rem; color: var(--gold-light); }
+        .exp-label { font-size: 0.74rem; color: rgba(255,255,255,0.55); text-transform: uppercase; letter-spacing: 0.06em; font-family: 'DM Mono', monospace; margin-top: 0.5rem; display: block; }
+
+        /* =============================================
+           NEW: CASE STUDIES
+        ============================================= */
+        .case-studies { padding: 7rem 0; background: var(--bg-secondary); }
+        .case-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.75rem; }
+        .case-card {
+            border: 1px solid var(--border); border-radius: 12px; overflow: hidden;
+            background: var(--bg-primary); transition: var(--transition); display: flex; flex-direction: column;
+        }
+        .case-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: var(--gold); }
+        .case-tag {
+            display: inline-block; align-self: flex-start; margin: 1.5rem 1.5rem 0;
+            font-family: 'DM Mono', monospace; font-size: 0.7rem; text-transform: uppercase;
+            letter-spacing: 0.07em; color: var(--gold); background: var(--gold-pale);
+            padding: 0.3rem 0.75rem; border-radius: 50px;
+        }
+        .case-card h3 { font-size: 1.1rem; margin: 1rem 1.5rem 0; }
+        .case-card dl { margin: 1rem 1.5rem 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; }
+        .case-card dt { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--gold); font-family: 'DM Mono', monospace; margin-bottom: 0.2rem; }
+        .case-card dd { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; }
+
+        /* =============================================
+           NEW: INSIGHTS / KNOWLEDGE CENTER
+        ============================================= */
+        .insights { padding: 7rem 0; background: var(--bg-primary); }
+        .insights-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.75rem; }
+        .insight-card {
+            border: 1px solid var(--border); border-radius: 12px; overflow: hidden;
+            background: var(--bg-secondary); transition: var(--transition);
+        }
+        .insight-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); border-color: var(--gold); }
+        .insight-img { height: 170px; overflow: hidden; }
+        .insight-img img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); }
+        .insight-card:hover .insight-img img { transform: scale(1.05); }
+        .insight-body { padding: 1.5rem; }
+        .insight-cat { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--gold); font-family: 'DM Mono', monospace; }
+        .insight-body h3 { font-size: 1.05rem; margin: 0.5rem 0 0.6rem; line-height: 1.35; }
+        .insight-body p { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1rem; }
+        .insight-meta { font-size: 0.75rem; color: var(--text-muted); font-family: 'DM Mono', monospace; display: flex; justify-content: space-between; }
     </style>
 </head>
 <body>
@@ -786,6 +906,8 @@
                     </div>
                 </li>
                 <li><a href="#industries" class="nav-link">Industries</a></li>
+                <li><a href="#case-studies" class="nav-link">Case Studies</a></li>
+                <li><a href="#insights" class="nav-link">Insights</a></li>
                 <li><a href="#team" class="nav-link">Team</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
@@ -810,6 +932,8 @@
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#industries">Industries</a>
+        <a href="#case-studies">Case Studies</a>
+        <a href="#insights">Insights</a>
         <a href="#team">Our Team</a>
         <a href="#contact">Contact</a>
         <a href="#contact" style="color:var(--gold);font-weight:700;">Book Consultation</a>
@@ -1150,6 +1274,170 @@
                 <i class="fas fa-hands-helping"></i>
                 <h4>NGOs &amp; INGOs</h4>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======================================================
+     EXPERIENCE & EXPERTISE — animated counters
+====================================================== -->
+<section class="experience" id="experience">
+    <div class="container">
+        <div class="section-header">
+            <span class="badge" style="background:rgba(212,175,55,0.18);color:var(--gold-light);border-color:rgba(212,175,55,0.3);">Track Record</span>
+            <h2>A Decade of Measurable Impact</h2>
+            <div class="divider center"></div>
+            <p>Numbers that reflect the depth and breadth of our engagements across Nepal's regulated industries.</p>
+        </div>
+        <div class="experience-grid">
+            <div class="exp-stat"><span class="exp-num" data-count="10">0<sup>+</sup></span><span class="exp-label">Years of Practice</span></div>
+            <div class="exp-stat"><span class="exp-num" data-count="14">0</span><span class="exp-label">Industries Served</span></div>
+            <div class="exp-stat"><span class="exp-num" data-count="620">0<sup>+</sup></span><span class="exp-label">Audits Completed</span></div>
+            <div class="exp-stat"><span class="exp-num" data-count="940">0<sup>+</sup></span><span class="exp-label">Tax Assignments</span></div>
+            <div class="exp-stat"><span class="exp-num" data-count="85">0<sup>+</sup></span><span class="exp-label">NFRS Implementations</span></div>
+            <div class="exp-stat"><span class="exp-num" data-count="310">0<sup>+</sup></span><span class="exp-label">Advisory Projects</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- ======================================================
+     CLIENTS & TRUST WALL
+====================================================== -->
+<section class="clients" id="clients">
+    <div class="container">
+        <div class="section-header">
+            <span class="badge">Our Clients</span>
+            <h2>Trusted Across Nepal's Leading Sectors</h2>
+            <div class="divider center"></div>
+            <p>From commercial banks to hydropower developers, our clients rely on us for accuracy, independence, and insight.</p>
+        </div>
+        <div class="clients-grid">
+            <div class="client-logo">Himal Bank</div>
+            <div class="client-logo">Sagarmatha Life</div>
+            <div class="client-logo">Annapurna Mfg.</div>
+            <div class="client-logo">Gandaki Hydro</div>
+            <div class="client-logo">Karuna INGO</div>
+            <div class="client-logo">NepTech Labs</div>
+            <div class="client-logo">Everest Finance</div>
+            <div class="client-logo">Lumbini Insurance</div>
+            <div class="client-logo">Koshi Industries</div>
+            <div class="client-logo">Trishuli Power</div>
+            <div class="client-logo">Bagmati Foundation</div>
+            <div class="client-logo">Pokhara Cloud</div>
+        </div>
+        <p class="clients-note">Trusted by <strong>500+</strong> organizations across banking, insurance, manufacturing, hydropower, NGO/INGO, and technology sectors</p>
+    </div>
+</section>
+
+<!-- ======================================================
+     PROFESSIONAL AFFILIATIONS
+====================================================== -->
+<section class="affiliations" id="affiliations">
+    <div class="container">
+        <div class="section-header">
+            <span class="badge">Credentials</span>
+            <h2>Recognized by Nepal's Regulatory & Professional Bodies</h2>
+            <div class="divider center"></div>
+            <p>Our standing with national and international institutions underpins every engagement we undertake.</p>
+        </div>
+        <div class="affil-grid">
+            <div class="affil-card"><i class="fas fa-balance-scale"></i><h4>ICAN</h4><p>Institute of Chartered Accountants of Nepal — Member Firm</p></div>
+            <div class="affil-card"><i class="fas fa-globe-asia"></i><h4>ICAI</h4><p>Institute of Chartered Accountants of India — Affiliate</p></div>
+            <div class="affil-card"><i class="fas fa-certificate"></i><h4>ACCA</h4><p>Association of Chartered Certified Accountants — Approved</p></div>
+            <div class="affil-card"><i class="fas fa-chart-pie"></i><h4>SEBON</h4><p>Securities Board of Nepal — Approved Auditor</p></div>
+            <div class="affil-card"><i class="fas fa-university"></i><h4>Nepal Rastra Bank</h4><p>Approved Auditor for BFIs under NRB Directives</p></div>
+            <div class="affil-card"><i class="fas fa-file-invoice"></i><h4>Inland Revenue Dept.</h4><p>Registered Tax Practitioners & Representatives</p></div>
+            <div class="affil-card"><i class="fas fa-industry"></i><h4>FNCCI</h4><p>Federation of Nepalese Chambers of Commerce & Industry</p></div>
+            <div class="affil-card"><i class="fas fa-handshake"></i><h4>CNI</h4><p>Confederation of Nepalese Industries — Advisory Partner</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- ======================================================
+     CASE STUDIES
+====================================================== -->
+<section class="case-studies" id="case-studies">
+    <div class="container">
+        <div class="section-header">
+            <span class="badge">Case Studies</span>
+            <h2>Real Engagements. Measurable Outcomes.</h2>
+            <div class="divider center"></div>
+            <p>A look at how we've helped clients navigate complex regulatory and financial challenges.</p>
+        </div>
+        <div class="case-grid">
+            <div class="case-card">
+                <span class="case-tag">Banking · NFRS</span>
+                <h3>Banking Sector NFRS Implementation</h3>
+                <dl>
+                    <div><dt>Challenge</dt><dd>A commercial bank faced a tight NRB deadline to migrate financial statements from NAS to full NFRS, including NFRS 9 ECL modelling.</dd></div>
+                    <div><dt>Solution</dt><dd>We ran a gap analysis, rebuilt the chart of accounts, and implemented an ECL model aligned with NFRS 9 and NRB directives.</dd></div>
+                    <div><dt>Result</dt><dd>Fully compliant statements delivered three weeks ahead of the regulatory deadline with zero audit findings.</dd></div>
+                </dl>
+            </div>
+            <div class="case-card">
+                <span class="case-tag">Manufacturing · Tax</span>
+                <h3>Manufacturing Tax Optimization</h3>
+                <dl>
+                    <div><dt>Challenge</dt><dd>A mid-size manufacturer was overpaying corporate tax due to missed allowable deductions and inefficient structuring.</dd></div>
+                    <div><dt>Solution</dt><dd>We conducted a full tax health-check, restructured intercompany arrangements, and filed amended returns within IRD guidelines.</dd></div>
+                    <div><dt>Result</dt><dd>Achieved a 22% reduction in effective tax rate through fully legitimate, documented optimization.</dd></div>
+                </dl>
+            </div>
+            <div class="case-card">
+                <span class="case-tag">Hydropower · Advisory</span>
+                <h3>Hydropower Financial Restructuring</h3>
+                <dl>
+                    <div><dt>Challenge</dt><dd>A hydropower developer needed to restructure debt and equity ahead of a refinancing round with international lenders.</dd></div>
+                    <div><dt>Solution</dt><dd>We prepared a bankable financial model, performed a business valuation, and supported lender due diligence end-to-end.</dd></div>
+                    <div><dt>Result</dt><dd>Secured refinancing at improved terms, reducing the project's weighted cost of capital by 1.8 percentage points.</dd></div>
+                </dl>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======================================================
+     INSIGHTS & KNOWLEDGE CENTER
+====================================================== -->
+<section class="insights" id="insights">
+    <div class="container">
+        <div class="section-header">
+            <span class="badge">Knowledge Center</span>
+            <h2>Insights, Updates & Analysis</h2>
+            <div class="divider center"></div>
+            <p>Our latest thinking on tax updates, NFRS developments, budget analysis, and regulatory change in Nepal.</p>
+        </div>
+        <div class="insights-grid">
+            <article class="insight-card">
+                <div class="insight-img"><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=600&q=80" alt="Finance Act amendments" loading="lazy"></div>
+                <div class="insight-body">
+                    <span class="insight-cat">Tax Updates</span>
+                    <h3>Finance Act Amendments: What Businesses Need to Know This Fiscal Year</h3>
+                    <p>A practical breakdown of the latest changes to corporate tax, VAT thresholds, and TDS provisions — and how to prepare.</p>
+                    <div class="insight-meta"><span>CA Bijay Pokhrel</span><span>6 min read</span></div>
+                </div>
+            </article>
+            <article class="insight-card">
+                <div class="insight-img"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" alt="NFRS 16 leases" loading="lazy"></div>
+                <div class="insight-body">
+                    <span class="insight-cat">NFRS</span>
+                    <h3>NFRS 16 Leases: Common Implementation Pitfalls We See in Practice</h3>
+                    <p>Lessons from dozens of lease-accounting transitions — discount rate selection, modification accounting, and disclosures.</p>
+                    <div class="insight-meta"><span>CA Rajan Thapa</span><span>8 min read</span></div>
+                </div>
+            </article>
+            <article class="insight-card">
+                <div class="insight-img"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="NRB banking directives" loading="lazy"></div>
+                <div class="insight-body">
+                    <span class="insight-cat">Banking Regulations</span>
+                    <h3>Decoding the Latest NRB Directives for Commercial Banks & MFIs</h3>
+                    <p>What the newest unified directives mean for capital adequacy, provisioning, and disclosure requirements.</p>
+                    <div class="insight-meta"><span>CA Priya Sharma</span><span>5 min read</span></div>
+                </div>
+            </article>
+        </div>
+        <div style="text-align:center;margin-top:3rem;">
+            <a href="#contact" class="btn btn-outline">View All Insights <i class="fas fa-arrow-right"></i></a>
         </div>
     </div>
 </section>
@@ -1540,6 +1828,28 @@
         });
     }, { threshold: 0.5 });
     statNums.forEach(n => statsObserver.observe(n));
+
+    // ---- Experience counters (data-count driven) ----
+    const expNums = document.querySelectorAll('.exp-num[data-count]');
+    const expObserver = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                const el = e.target;
+                const sup = el.querySelector('sup');
+                const target = parseInt(el.dataset.count, 10);
+                let current = 0;
+                const step = Math.ceil(target / 50);
+                const timer = setInterval(() => {
+                    current = Math.min(current + step, target);
+                    el.textContent = current;
+                    if (sup) el.appendChild(sup);
+                    if (current >= target) clearInterval(timer);
+                }, 30);
+                expObserver.unobserve(el);
+            }
+        });
+    }, { threshold: 0.5 });
+    expNums.forEach(n => expObserver.observe(n));
 </script>
 </body>
 </html>
