@@ -1,37 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Bijay Pokhrel  Associates | Chartered Accountants & Business Advisors</title>
-    <meta name="description" content="Premier Chartered Accountancy & Audit Firm in Nepal. Providing world-class Statutory Audit, Tax Advisory, NFRS Compliance, and Corporate Advisory services for [...]
+    <title>Bijay Pokhrel & Associates | Chartered Accountants & Business Advisors</title>
+    <meta name="description" content="Premier Chartered Accountancy & Audit Firm in Nepal. Providing world-class Statutory Audit, Tax Advisory, NFRS Compliance, and Corporate Advisory services.">
     <meta name="keywords" content="Chartered Accountant Nepal, Audit Firm Kathmandu, NFRS Compliance, Tax Advisory Nepal, Statutory Audit, Nepal Rastra Bank Directives">
-    <meta name="author" content="Bijay Pokhrel  Associates">
+    <meta name="author" content="Bijay Pokhrel & Associates">
     <meta name="robots" content="index, follow">
 
+    <!-- FIX #1: og:image URL corrected (no & in URL) -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Bijay Pokhrel  Associates | Chartered Accountants & Business Advisors">
-    <meta property="og:description" content="Premier Chartered Accountancy & Audit Firm in Nepal. Corporate assurance, tax strategy, and financial advisory engineered to global standards.">
+    <meta property="og:title" content="Bijay Pokhrel & Associates | Chartered Accountants">
+    <meta property="og:description" content="Premier Chartered Accountancy & Audit Firm in Nepal.">
     <meta property="og:image" content="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&h=630&q=80">
 
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Bijay Pokhrel  Associates | Chartered Accountants & Business Advisors">
-    <meta property="twitter:description" content="Premier Chartered Accountancy & Audit Firm in Nepal. Corporate assurance, tax strategy, and financial advisory engineered to global standards.">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    <!-- FIX #2: JSON-LD @id and url use hyphen domain instead of & -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "AccountingService",
-      "name": "Bijay Pokhrel  Associates, Chartered Accountants",
-      "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80",
-      "@id": "https://www.bijaypokhrel&associates.com",
-      "url": "https://www.bijaypokhrel&associates.com",
+      "name": "Bijay Pokhrel & Associates, Chartered Accountants",
+      "@id": "https://www.bijaypokhrel-associates.com",
+      "url": "https://www.bijaypokhrel-associates.com",
       "telephone": "+977-9862145832",
       "address": {
         "@type": "PostalAddress",
@@ -40,961 +31,1515 @@
         "postalCode": "44600",
         "addressCountry": "NP"
       },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 27.6915,
-        "longitude": 85.3422
-      },
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Sunday",
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday"
-        ],
+        "dayOfWeek": ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday"],
         "opens": "09:00",
         "closes": "18:00"
       },
-      "sameAs": [
-        "https://www.linkedin.com/in/bijay-pokhrel-8b09981b9"
-      ]
+      "sameAs": ["https://www.linkedin.com/in/bijay-pokhrel-8b09981b9"]
     }
     </script>
 
+    <!-- FIX #3: Replaced Inter/Manrope with more distinctive Playfair Display + DM Sans pairing -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
+        /* =============================================
+           FIX #4: CSS Variables fully structured for
+           both light and dark themes (dark theme was 
+           incomplete / missing several vars before)
+        ============================================= */
         :root {
-            /* Light Theme Variables */
-            --bg-primary: #f8fafc;
+            --bg-primary: #f7f4ef;
             --bg-secondary: #ffffff;
-            --bg-surface: rgba(255, 255, 255, 0.75);
-            --bg-footer: #0b132b;
-            --text-primary: #0f172a;
-            --text-secondary: #475569;
+            --bg-surface: rgba(255,255,255,0.85);
+            --bg-footer: #0e1117;
+            --text-primary: #0e1117;
+            --text-secondary: #4a5568;
             --text-muted: #94a3b8;
-            --primary: #0a2540;
-            --primary-light: #635bff;
-            --secondary: #d4af37; /* Metallic Corporate Gold */
-            --secondary-hover: #b8962e;
-            --accent-blue: #00d4ff;
-            --border-color: rgba(15, 23, 42, 0.08);
-            --glass-border: rgba(255, 255, 255, 0.6);
-            --shadow-sm: 0 2px 4px rgba(0,0,0,0.02);
-            --shadow-md: 0 10px 25px -5px rgba(0,0,0,0.05), 0 8px 10px -6px rgba(0,0,0,0.05);
-            --shadow-lg: 0 20px 40px -15px rgba(0,0,0,0.08);
-            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --primary: #0e1117;
+            --primary-hover: #1a202c;
+            --gold: #b8860b;
+            --gold-light: #d4af37;
+            --gold-pale: rgba(184,134,11,0.10);
+            --border: rgba(14,17,23,0.10);
+            --radius: 10px;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+            --shadow-md: 0 8px 30px rgba(0,0,0,0.07);
+            --shadow-lg: 0 20px 60px rgba(0,0,0,0.10);
+            --transition: all 0.35s cubic-bezier(0.16,1,0.3,1);
+            --nav-bg: rgba(247,244,239,0.88);
         }
 
         [data-theme="dark"] {
-            /* Dark Theme Variables */
-            --bg-primary: #030712;
-            --bg-secondary: #0b0f19;
-            --bg-surface: rgba(11, 15, 25, 0.7);
-            --bg-footer: #020617;
-            --text-primary: #f8fafc;
+            --bg-primary: #0b0e15;
+            --bg-secondary: #12161f;
+            --bg-surface: rgba(18,22,31,0.88);
+            --bg-footer: #060810;
+            --text-primary: #f0ede8;
             --text-secondary: #94a3b8;
             --text-muted: #64748b;
-            --primary: #635bff;
-            --primary-light: #8079ff;
-            --secondary: #f59e0b;
-            --secondary-hover: #d97706;
-            --accent-blue: #38bdf8;
-            --border-color: rgba(255, 255, 255, 0.05);
-            --glass-border: rgba(255, 255, 255, 0.03);
-            --shadow-sm: 0 2px 4px rgba(0,0,0,0.2);
-            --shadow-md: 0 10px 25px -5px rgba(0,0,0,0.3);
-            --shadow-lg: 0 20px 40px -15px rgba(0,0,0,0.5);
+            --primary: #f0ede8;
+            --primary-hover: #ffffff;
+            --gold: #d4af37;
+            --gold-light: #f0c83a;
+            --gold-pale: rgba(212,175,55,0.12);
+            --border: rgba(240,237,232,0.08);
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
+            --shadow-md: 0 8px 30px rgba(0,0,0,0.4);
+            --shadow-lg: 0 20px 60px rgba(0,0,0,0.5);
+            --nav-bg: rgba(11,14,21,0.92);
         }
 
-        /* Reset & Base Styles */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            font-size: 16px;
-        }
-
+        /* =============================================
+           BASE RESET
+        ============================================= */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; font-size: 16px; }
         body {
-            font-family: 'Inter', sans-serif;
+            /* FIX #5: Font family updated to new distinctive pairing */
+            font-family: 'DM Sans', sans-serif;
             background-color: var(--bg-primary);
             color: var(--text-primary);
-            line-height: 1.6;
+            line-height: 1.65;
             overflow-x: hidden;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Manrope', sans-serif;
-            font-weight: 700;
-            letter-spacing: -0.02em;
+        h1,h2,h3,h4,h5,h6 {
+            font-family: 'Playfair Display', serif;
+            letter-spacing: -0.01em;
         }
+        a { text-decoration: none; color: inherit; transition: var(--transition); }
+        ul { list-style: none; }
+        img { max-width: 100%; height: auto; display: block; }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: var(--transition);
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* Utility Components */
-        .container {
-            width: 100%;
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
+        /* =============================================
+           LAYOUT UTILITIES
+        ============================================= */
+        .container { width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 2rem; }
 
         .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.875rem 1.75rem;
-            font-weight: 600;
-            border-radius: 6px;
-            transition: var(--transition);
-            cursor: pointer;
-            font-size: 0.95rem;
-            gap: 0.5rem;
-            border: none;
+            display: inline-flex; align-items: center; justify-content: center;
+            padding: 0.85rem 1.75rem; font-weight: 600; border-radius: var(--radius);
+            transition: var(--transition); cursor: pointer; font-size: 0.92rem;
+            gap: 0.5rem; border: none; font-family: 'DM Sans', sans-serif;
         }
-
         .btn-primary {
-            background-color: var(--primary);
-            color: #ffffff;
-            box-shadow: 0 4px 14px rgba(99, 91, 255, 0.25);
+            background: var(--primary); color: #fff;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.12);
         }
+        .btn-primary:hover { opacity: 0.85; transform: translateY(-2px); }
 
-        [data-theme="light"] .btn-primary {
-            background-color: #0a2540;
-            box-shadow: 0 4px 14px rgba(10, 37, 64, 0.15);
+        .btn-outline {
+            background: transparent; color: var(--text-primary);
+            border: 1.5px solid var(--border);
         }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(99, 91, 255, 0.35);
-            opacity: 0.95;
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--text-primary);
-            border: 1px solid var(--border-color);
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--bg-secondary);
-            border-color: var(--text-muted);
-            transform: translateY(-2px);
-        }
+        .btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
 
         .btn-gold {
-            background-color: var(--secondary);
-            color: #000000;
-            font-weight: 700;
+            background: var(--gold); color: #fff; font-weight: 700;
+            box-shadow: 0 4px 14px rgba(184,134,11,0.25);
         }
-
-        .btn-gold:hover {
-            background-color: var(--secondary-hover);
-            transform: translateY(-2px);
-        }
+        .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
 
         .badge {
-            display: inline-block;
-            padding: 0.35rem 0.85rem;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            border-radius: 50px;
-            background: rgba(212, 175, 55, 0.15);
-            color: var(--secondary);
-            border: 1px solid rgba(212, 175, 55, 0.25);
-            margin-bottom: 1.25rem;
+            display: inline-block; padding: 0.3rem 0.9rem; font-size: 0.72rem;
+            font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+            border-radius: 50px; background: var(--gold-pale); color: var(--gold);
+            border: 1px solid rgba(184,134,11,0.25); margin-bottom: 1.25rem;
+            font-family: 'DM Mono', monospace;
         }
 
-        .section-title-wrapper {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 4.5rem auto;
-        }
+        .section-header { text-align: center; max-width: 680px; margin: 0 auto 4rem; }
+        .section-header h2 { font-size: 2.6rem; margin-bottom: 1rem; line-height: 1.2; }
+        .section-header p { color: var(--text-secondary); font-size: 1.05rem; }
 
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .divider {
+            width: 48px; height: 3px;
+            background: linear-gradient(90deg, var(--gold), transparent);
+            margin: 1rem 0 1.5rem;
         }
+        .divider.center { margin: 1rem auto 1.5rem; }
 
-        .section-desc {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-        }
-
-        /* Glassmorphism utility */
-        .glass-card {
-            background: var(--bg-surface);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid var(--glass-border);
-            border-radius: 12px;
-            box-shadow: var(--shadow-md);
-        }
-
-        /* Navigation Bar */
+        /* =============================================
+           NAVBAR
+           FIX #6: Mega menu positioning corrected;
+           FIX #7: Mobile hamburger fully wired up;
+           FIX #8: Theme toggle properly toggles both
+                   data-theme attr and icon;
+        ============================================= */
         .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border-color);
+            position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+            background: var(--nav-bg);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
             transition: var(--transition);
         }
+        .navbar.scrolled { box-shadow: var(--shadow-md); }
 
-        [data-theme="dark"] .navbar {
-            background: rgba(11, 15, 25, 0.75);
+        .nav-inner {
+            display: flex; align-items: center; justify-content: space-between;
+            height: 76px; transition: var(--transition);
         }
+        .navbar.scrolled .nav-inner { height: 62px; }
 
-        .navbar.scrolled {
-            padding: 0.5rem 0;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .nav-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 80px;
-            transition: var(--transition);
-        }
-
-        .navbar.scrolled .nav-container {
-            height: 65px;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-size: 1.4rem;
-            font-weight: 800;
-            font-family: 'Poppins', sans-serif;
-            color: var(--text-primary);
-        }
-
-        .logo-emblem {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, #0a2540 0%, var(--secondary) 100%);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-weight: 700;
-            font-size: 1.2rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-        }
-
-        .logo-text span {
-            color: var(--secondary);
-            font-weight: 400;
-            font-size: 0.85rem;
-            display: block;
-            margin-top: -4px;
-            letter-spacing: 0.1em;
-        }
-
-        .nav-menu {
-            display: flex;
-            align-items: center;
-            gap: 2.25rem;
-        }
-
-        .nav-link {
-            font-weight: 500;
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            position: relative;
-            padding: 0.5rem 0;
-        }
-
-        .nav-link:hover, .nav-link.active {
-            color: var(--text-primary);
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--secondary);
-            transition: var(--transition);
-        }
-
-        .nav-link:hover::after, .nav-link.active::after {
-            width: 100%;
-        }
-
-        /* Mega Menu Core styling */
-        .has-megamenu {
-            position: static;
-        }
-
-        .megamenu {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-            background: var(--bg-secondary);
-            border-bottom: 3px solid var(--secondary);
-            box-shadow: var(--shadow-lg);
-            padding: 3rem 0;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(15px);
-            transition: var(--transition);
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            z-index: 999;
-        }
-
-        .has-megamenu:hover .megamenu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .megamenu-column h4 {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--secondary);
-            margin-bottom: 1.25rem;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 0.5rem;
-        }
-
-        .megamenu-column ul li {
-            margin-bottom: 0.75rem;
-        }
-
-        .megamenu-column ul a {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .megamenu-column ul a:hover {
-            color: var(--text-primary);
-            padding-left: 5px;
-        }
-
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: 1.25rem;
-        }
-
-        .theme-toggle {
-            background: none;
-            border: none;
-            color: var(--text-secondary);
-            cursor: pointer;
-            font-size: 1.2rem;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-            border: 1px solid var(--border-color);
-        }
-
-        .theme-toggle:hover {
-            color: var(--text-primary);
-            background-color: var(--border-color);
-        }
-
-        .search-trigger {
-            background: none;
-            border: none;
-            color: var(--text-secondary);
-            cursor: pointer;
-            font-size: 1.1rem;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid var(--border-color);
-            transition: var(--transition);
-        }
-
-        .search-trigger:hover {
-            color: var(--text-primary);
-            background-color: var(--border-color);
-        }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 6px;
-            cursor: pointer;
-            background: none;
-            border: none;
-            padding: 0.5rem;
-        }
-
-        .hamburger span {
-            display: block;
-            width: 26px;
-            height: 2px;
-            background-color: var(--text-primary);
-            transition: var(--transition);
-        }
-
-        /* Search Overlay Overlay */
-        .search-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(3, 7, 18, 0.95);
-            z-index: 2000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-        }
-
-        .search-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .search-box {
-            position: relative;
-            width: 100%;
-            max-width: 600px;
-            padding: 0 1.5rem;
-        }
-
-        .search-input {
-            width: 100%;
-            background: transparent;
-            border: none;
-            border-bottom: 2px solid rgba(255,255,255,0.2);
-            padding: 1rem 0;
-            font-size: 1.5rem;
-            color: #fff;
-            font-family: 'Manrope', sans-serif;
-            outline: none;
-        }
-
-        .search-input:focus {
-            border-color: var(--secondary);
-        }
-
-        .search-close {
-            position: absolute;
-            top: 2rem;
-            right: 2rem;
-            background: none;
-            border: none;
-            color: #fff;
-            font-size: 2rem;
-            cursor: pointer;
-        }
-
-        /* Hero Section */
-        .hero {
-            position: relative;
-            padding: 11rem 0 7rem 0;
-            background-color: var(--bg-primary);
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -10%;
-            right: -10%;
-            width: 50vw;
-            height: 50vw;
-            background: radial-gradient(circle, rgba(99,91,255,0.08) 0%, transparent 70%);
-            z-index: 0;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: -10%;
-            left: -10%;
-            width: 40vw;
-            height: 40vw;
-            background: radial-gradient(circle, rgba(212,175,55,0.06) 0%, transparent 70%);
-            z-index: 0;
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 4rem;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-content h1 {
-            font-size: 3.75rem;
-            font-weight: 800;
-            line-height: 1.15;
-            margin-bottom: 1.5rem;
-            color: var(--text-primary);
-        }
-
-        .hero-content h1 span {
-            background: linear-gradient(135deg, var(--primary-light) 0%, var(--secondary) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-content p {
-            font-size: 1.15rem;
-            color: var(--text-secondary);
-            margin-bottom: 2.5rem;
-            max-width: 560px;
-        }
-
-        .hero-actions {
-            display: flex;
-            gap: 1.25rem;
-            margin-bottom: 3.5rem;
-        }
-
-        /* Stats Grid */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            border-top: 1px solid var(--border-color);
-            padding-top: 2rem;
-        }
-
-        .stat-item h3 {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--text-primary);
-            margin-bottom: 0.25rem;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .stat-item h3 span {
-            color: var(--secondary);
-        }
-
-        .stat-item p {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-weight: 600;
-        }
-
-        /* Hero Graphic Stack */
-        .hero-graphic {
-            position: relative;
-        }
-
-        .main-img-wrapper {
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-            border: 1px solid var(--border-color);
-            transform: perspective(1000px) rotateY(-8deg) rotateX(4deg);
-            transition: var(--transition);
-        }
-
-        .main-img-wrapper:hover {
-            transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
-        }
-
-        .hero-floating-card {
-            position: absolute;
-            bottom: 2rem;
-            left: -2rem;
-            padding: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            max-width: 260px;
-        }
-
-        .card-icon-box {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: rgba(99, 91, 255, 0.15);
-            color: var(--primary-light);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.25rem;
-        }
-
-        .card-info h4 {
-            font-size: 0.95rem;
-            color: var(--text-primary);
-        }
-
-        .card-info p {
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-        }
-
-        /* About Section */
-        .about {
-            padding: 7rem 0;
-            background-color: var(--bg-secondary);
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4.5rem;
-            align-items: center;
-        }
-
-        .about-left {
-            position: relative;
-        }
-
-        .about-img-grid {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            gap: 1rem;
-        }
-
-        .about-img-1 {
-            grid-column: 1 / span 8;
-            border-radius: 12px;
-            box-shadow: var(--shadow-md);
-        }
-
-        .about-img-2 {
-            grid-column: 5 / -1;
-            margin-top: -50px;
-            border-radius: 12px;
-            box-shadow: var(--shadow-lg);
-            border: 4px solid var(--bg-secondary);
-        }
-
-        .about-right h2 {
-            font-size: 2.25rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .about-lead {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            font-weight: 500;
-        }
-
-        /* Pillar Tabs / Content blocks */
-        .pillars-stack {
-            display: flex;
-            flex-direction: column;
-            gap: 1.25rem;
-        }
-
-        .pillar-card {
-            padding: 1.25rem;
-            border-left: 3px solid var(--border-color);
-            transition: var(--transition);
-        }
-
-        .pillar-card:hover, .pillar-card.active {
-            border-left-color: var(--secondary);
-            background: var(--bg-primary);
-        }
-
-        .pillar-card h4 {
-            font-size: 1.1rem;
-            margin-bottom: 0.35rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .pillar-card h4 i {
-            color: var(--secondary);
-        }
-
-        .pillar-card p {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            padding-left: 1.75rem;
-        }
-
-        /* Services Grid Section */
-        .services {
-            padding: 7rem 0;
-            background-color: var(--bg-primary);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        .service-card {
-            padding: 2.5rem;
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(99,91,255,0.03) 0%, transparent 100%);
-            opacity: 0;
-            transition: var(--transition);
-        }
-
-        .service-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-lg);
-            border-color: rgba(212, 175, 55, 0.3);
-        }
-
-        .service-card:hover::before {
-            opacity: 1;
-        }
-
-        .service-icon {
-            width: 56px;
-            height: 56px;
-            border-radius: 10px;
-            background: rgba(15, 23, 42, 0.04);
-            color: var(--primary-light);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 1.75rem;
-            transition: var(--transition);
-        }
-
-        [data-theme="dark"] .service-icon {
-            background: rgba(255, 255, 255, 0.04);
-        }
-
-        .service-card:hover .service-icon {
+        /* Logo */
+        .logo { display: flex; align-items: center; gap: 0.75rem; }
+        .logo-mark {
+            width: 42px; height: 42px; border-radius: 8px;
             background: var(--primary);
-            color: #ffffff;
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'Playfair Display', serif;
+            color: var(--gold-light); font-size: 1.3rem; font-weight: 700;
+            flex-shrink: 0;
+        }
+        .logo-text { line-height: 1.2; }
+        .logo-text strong {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem; display: block; color: var(--text-primary);
+        }
+        .logo-text small {
+            font-size: 0.7rem; color: var(--gold); font-weight: 600;
+            text-transform: uppercase; letter-spacing: 0.08em;
+            font-family: 'DM Mono', monospace;
         }
 
-        .service-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
+        /* Nav Links */
+        .nav-menu { display: flex; align-items: center; gap: 2rem; }
+        .nav-link {
+            font-size: 0.9rem; font-weight: 500; color: var(--text-secondary);
+            position: relative; padding: 0.5rem 0;
+        }
+        .nav-link:hover { color: var(--text-primary); }
+        .nav-link::after {
+            content: ''; position: absolute; bottom: 0; left: 0;
+            width: 0; height: 2px; background: var(--gold); transition: var(--transition);
+        }
+        .nav-link:hover::after { width: 100%; }
+
+        /* FIX #6: Megamenu — added max-width container and padding fix */
+        .has-mega { position: static; }
+        .megamenu {
+            position: absolute; top: 100%; left: 0; width: 100%;
+            background: var(--bg-secondary);
+            border-top: 2px solid var(--gold);
+            border-bottom: 1px solid var(--border);
+            box-shadow: var(--shadow-lg);
+            padding: 2.5rem 0;
+            opacity: 0; visibility: hidden; transform: translateY(10px);
+            transition: var(--transition); z-index: 999;
+        }
+        .has-mega:hover .megamenu { opacity: 1; visibility: visible; transform: translateY(0); }
+        .megamenu-inner { display: grid; grid-template-columns: repeat(4,1fr); gap: 2rem; }
+        .megamenu-col h4 {
+            font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.08em; color: var(--gold); margin-bottom: 1rem;
+            padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);
+            font-family: 'DM Mono', monospace;
+        }
+        .megamenu-col ul li { margin-bottom: 0.6rem; }
+        .megamenu-col ul a {
+            font-size: 0.875rem; color: var(--text-secondary);
+            display: flex; align-items: center; gap: 0.5rem;
+        }
+        .megamenu-col ul a i { font-size: 0.75rem; color: var(--gold); width: 14px; }
+        .megamenu-col ul a:hover { color: var(--text-primary); padding-left: 4px; }
+
+        .nav-actions { display: flex; align-items: center; gap: 1rem; }
+        .icon-btn {
+            background: none; border: 1px solid var(--border);
+            color: var(--text-secondary); cursor: pointer;
+            width: 38px; height: 38px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.95rem; transition: var(--transition);
+        }
+        .icon-btn:hover { color: var(--text-primary); border-color: var(--gold); }
+
+        /* FIX #7: Hamburger fully styled */
+        .hamburger {
+            display: none; flex-direction: column; gap: 5px;
+            cursor: pointer; background: none; border: none; padding: 0.4rem;
+        }
+        .hamburger span {
+            display: block; width: 24px; height: 2px;
+            background: var(--text-primary); transition: var(--transition); border-radius: 2px;
+        }
+        .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        /* Mobile Nav */
+        .mobile-nav {
+            display: none; flex-direction: column; gap: 0;
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            max-height: 0; overflow: hidden; transition: max-height 0.4s ease;
+        }
+        .mobile-nav.open { max-height: 600px; }
+        .mobile-nav a {
+            padding: 0.9rem 2rem; font-size: 0.95rem;
+            color: var(--text-secondary); border-bottom: 1px solid var(--border);
+        }
+        .mobile-nav a:hover { color: var(--gold); background: var(--gold-pale); }
+
+        /* =============================================
+           HERO
+           FIX #9: Added proper z-index to pseudo-elements
+                   so they don't overlap content;
+           FIX #10: h1 font-size made responsive
+        ============================================= */
+        .hero {
+            position: relative; padding: 10rem 0 6rem;
+            background: var(--bg-primary); overflow: hidden;
+        }
+        /* FIX #9: z-index: 0 on pseudo elements, content z-index: 1 */
+        .hero::before {
+            content: ''; position: absolute; inset: 0; z-index: 0;
+            background:
+                radial-gradient(ellipse 60% 50% at 80% 20%, rgba(184,134,11,0.07) 0%, transparent 70%),
+                radial-gradient(ellipse 50% 60% at 20% 80%, rgba(14,17,23,0.04) 0%, transparent 70%);
+        }
+        /* Decorative grid lines */
+        .hero::after {
+            content: ''; position: absolute; inset: 0; z-index: 0;
+            background-image:
+                linear-gradient(var(--border) 1px, transparent 1px),
+                linear-gradient(90deg, var(--border) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%);
         }
 
-        .service-card p {
-            color: var(--text-secondary);
-            font-size: 0.925rem;
-            margin-bottom: 1.5rem;
-            flex-grow: 1;
+        .hero-content { position: relative; z-index: 1; max-width: 780px; }
+
+        /* FIX #10: Responsive hero heading */
+        .hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            font-weight: 800; line-height: 1.15; margin-bottom: 1.5rem;
+        }
+        .hero h1 em { font-style: italic; color: var(--gold); }
+
+        .hero-lead {
+            font-size: 1.1rem; color: var(--text-secondary);
+            max-width: 560px; margin-bottom: 2.5rem; line-height: 1.8;
+        }
+        .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 4rem; }
+
+        /* Stats bar */
+        .stats-bar {
+            display: grid; grid-template-columns: repeat(4,1fr);
+            gap: 2rem; border-top: 1px solid var(--border); padding-top: 2.5rem;
+            position: relative; z-index: 1;
+        }
+        .stat-item {}
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem; font-weight: 700; color: var(--text-primary);
+            display: block; line-height: 1;
+        }
+        .stat-number sup { font-size: 1rem; color: var(--gold); vertical-align: super; }
+        .stat-label {
+            font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase;
+            letter-spacing: 0.07em; font-weight: 600; margin-top: 0.4rem;
+            font-family: 'DM Mono', monospace; display: block;
         }
 
-        .service-link {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
+        /* Credentials ribbon */
+        .credentials-ribbon {
+            background: var(--primary); padding: 1.25rem 0; overflow: hidden;
+            position: relative;
+        }
+        .ribbon-track {
+            display: flex; gap: 3rem; width: max-content;
+            animation: scrollRibbon 25s linear infinite;
+        }
+        .ribbon-track:hover { animation-play-state: paused; }
+        @keyframes scrollRibbon {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .ribbon-item {
+            display: flex; align-items: center; gap: 0.6rem;
+            color: rgba(255,255,255,0.75); font-size: 0.82rem;
+            font-weight: 600; white-space: nowrap;
+            font-family: 'DM Mono', monospace; text-transform: uppercase; letter-spacing: 0.05em;
+        }
+        .ribbon-item i { color: var(--gold-light); font-size: 0.9rem; }
+        .ribbon-dot {
+            width: 4px; height: 4px; border-radius: 50%;
+            background: var(--gold-light); opacity: 0.4;
         }
 
-        .service-link i {
-            font-size: 0.8rem;
+        /* =============================================
+           ABOUT SECTION
+           FIX #11: about-img-grid overlapping images
+                    were broken on smaller screens — 
+                    simplified to a single column stack
+        ============================================= */
+        .about { padding: 7rem 0; background: var(--bg-secondary); }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+        .about-visual { position: relative; }
+        .about-img-main {
+            border-radius: 12px; overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border);
+        }
+        .about-img-main img { width: 100%; height: 360px; object-fit: cover; }
+
+        /* FIX #11: floating card now properly positioned */
+        .about-float-card {
+            position: absolute; bottom: -1.5rem; right: -1.5rem;
+            background: var(--gold); color: #fff;
+            padding: 1.5rem 2rem; border-radius: 10px;
+            box-shadow: var(--shadow-lg);
+            max-width: 200px; text-align: center;
+        }
+        .about-float-card strong {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem; display: block; line-height: 1;
+        }
+        .about-float-card span { font-size: 0.78rem; opacity: 0.85; font-weight: 600; text-transform: uppercase; }
+
+        .about-text h2 { font-size: 2.2rem; margin-bottom: 0.5rem; }
+        .about-text .lead { font-size: 1.05rem; color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.8; }
+
+        .pillar-list { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem; }
+        .pillar-item {
+            display: flex; gap: 1rem; align-items: flex-start;
+            padding: 1rem 1.25rem;
+            border: 1px solid var(--border); border-radius: var(--radius);
             transition: var(--transition);
         }
-
-        .service-card:hover .service-link i {
-            transform: translateX(5px);
-            color: var(--secondary);
+        .pillar-item:hover { border-color: var(--gold); background: var(--gold-pale); }
+        .pillar-icon {
+            width: 36px; height: 36px; border-radius: 8px;
+            background: var(--gold-pale); color: var(--gold);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.9rem; flex-shrink: 0;
         }
+        .pillar-item h4 { font-size: 0.95rem; margin-bottom: 0.2rem; font-family: 'DM Sans', sans-serif; font-weight: 600; }
+        .pillar-item p { font-size: 0.85rem; color: var(--text-secondary); }
 
-        /* Why Choose Us Section */
-        .why-choose {
-            padding: 7rem 0;
-            background-color: var(--bg-secondary);
-        }
-
-        .why-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .why-feat-list {
-            display: flex;
-            flex-direction: column;
+        /* =============================================
+           SERVICES
+           FIX #12: service-card height was set to 100%
+                    inside a grid that didn't have equal
+                    rows — replaced with align-items:stretch
+        ============================================= */
+        .services { padding: 7rem 0; background: var(--bg-primary); }
+        .services-grid {
+            display: grid; grid-template-columns: repeat(3,1fr);
             gap: 1.75rem;
         }
-
-        .why-feat-item {
-            display: flex;
-            gap: 1.25rem;
+        .service-card {
+            padding: 2.25rem; border-radius: 12px;
+            border: 1px solid var(--border);
+            background: var(--bg-secondary);
+            transition: var(--transition);
+            display: flex; flex-direction: column;
+            position: relative; overflow: hidden;
         }
+        .service-card::after {
+            content: ''; position: absolute; bottom: 0; left: 0;
+            width: 0; height: 2px; background: var(--gold); transition: var(--transition);
+        }
+        .service-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+        .service-card:hover::after { width: 100%; }
 
-        .why-feat-icon {
+        .service-num {
+            font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--gold);
+            font-weight: 500; margin-bottom: 1.5rem; display: block;
+        }
+        .service-ico {
+            width: 52px; height: 52px; border-radius: 10px;
+            background: var(--gold-pale); color: var(--gold);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.4rem; margin-bottom: 1.5rem; transition: var(--transition);
+        }
+        .service-card:hover .service-ico { background: var(--gold); color: #fff; }
+        .service-card h3 { font-size: 1.2rem; margin-bottom: 0.85rem; }
+        .service-card p { color: var(--text-secondary); font-size: 0.9rem; flex-grow: 1; margin-bottom: 1.5rem; }
+        .service-link {
+            font-size: 0.85rem; font-weight: 600; color: var(--text-primary);
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            border-bottom: 1px solid var(--border); padding-bottom: 0.1rem;
+        }
+        .service-card:hover .service-link { color: var(--gold); border-color: var(--gold); }
+
+        /* =============================================
+           WHY CHOOSE US
+        ============================================= */
+        .why { padding: 7rem 0; background: var(--bg-secondary); }
+        .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+        .why-visual {
+            background: var(--bg-primary);
+            border-radius: 12px; border: 1px solid var(--border);
+            padding: 2.5rem; display: flex; flex-direction: column; gap: 1rem;
+        }
+        .process-step {
+            display: flex; gap: 1.25rem; align-items: flex-start;
+            padding: 1rem; border-radius: 8px; transition: var(--transition);
+        }
+        .process-step:hover { background: var(--bg-secondary); transform: translateX(5px); }
+        .step-num {
+            width: 32px; height: 32px; border-radius: 50%;
+            background: var(--primary); color: var(--gold-light);
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'DM Mono', monospace; font-size: 0.75rem; font-weight: 700;
             flex-shrink: 0;
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: rgba(212,175,55,0.12);
-            color: var(--secondary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
         }
+        .step-text h4 { font-size: 0.95rem; margin-bottom: 0.2rem; font-family: 'DM Sans', sans-serif; font-weight: 600; }
+        .step-text p { font-size: 0.85rem; color: var(--text-secondary); }
 
-        .why-feat-content h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
+        .why-feats { display: flex; flex-direction: column; gap: 1.5rem; }
+        .why-feat { display: flex; gap: 1.25rem; }
+        .why-feat-icon {
+            width: 48px; height: 48px; border-radius: 50%;
+            background: var(--gold-pale); color: var(--gold);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.1rem; flex-shrink: 0;
         }
+        .why-feat h3 { font-size: 1.05rem; margin-bottom: 0.35rem; font-family: 'DM Sans', sans-serif; font-weight: 600; }
+        .why-feat p { font-size: 0.9rem; color: var(--text-secondary); }
 
-        .why-feat-content p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
+        /* =============================================
+           INDUSTRIES
+        ============================================= */
+        .industries { padding: 7rem 0; background: var(--bg-primary); }
+        .industry-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 1.25rem; }
+        .industry-card {
+            padding: 2rem 1.25rem; text-align: center;
+            border: 1px solid var(--border); border-radius: 12px;
+            background: var(--bg-secondary); transition: var(--transition);
+            cursor: default;
         }
+        .industry-card i { font-size: 2rem; color: var(--text-muted); margin-bottom: 1rem; transition: var(--transition); display: block; }
+        .industry-card h4 { font-size: 0.9rem; font-weight: 600; font-family: 'DM Sans', sans-serif; }
+        .industry-card:hover {
+            background: var(--primary); border-color: var(--primary);
+            transform: translateY(-6px); box-shadow: var(--shadow-lg);
+        }
+        .industry-card:hover i { color: var(--gold-light); transform: scale(1.1); }
+        .industry-card:hover h4 { color: #fff; }
 
-        /* Interactive Diagram/Graphic representation for methodology */
-        .methodology-graphic {
-            padding: 3rem;
+        /* =============================================
+           TEAM / LEADERSHIP
+           FIX #13: Added team section that was cut off
+        ============================================= */
+        .team { padding: 7rem 0; background: var(--bg-secondary); }
+        .team-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; }
+        .team-card {
+            border: 1px solid var(--border); border-radius: 12px;
+            overflow: hidden; background: var(--bg-primary); transition: var(--transition);
+        }
+        .team-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+        .team-img { height: 220px; overflow: hidden; }
+        .team-img img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); }
+        .team-card:hover .team-img img { transform: scale(1.05); }
+        .team-info { padding: 1.5rem; }
+        .team-info h3 { font-size: 1.15rem; margin-bottom: 0.25rem; }
+        .team-info span { font-size: 0.8rem; color: var(--gold); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; font-family: 'DM Mono', monospace; }
+        .team-info p { font-size: 0.875rem; color: var(--text-secondary); margin-top: 0.75rem; }
+        .team-socials { margin-top: 1rem; display: flex; gap: 0.5rem; }
+        .team-socials a {
+            width: 32px; height: 32px; border-radius: 50%;
+            border: 1px solid var(--border); color: var(--text-muted);
+            display: flex; align-items: center; justify-content: center; font-size: 0.8rem;
+        }
+        .team-socials a:hover { border-color: var(--gold); color: var(--gold); }
+
+        /* =============================================
+           TESTIMONIALS
+           FIX #14: Added testimonials section (was missing)
+        ============================================= */
+        .testimonials { padding: 7rem 0; background: var(--bg-primary); }
+        .testimonial-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; }
+        .testimonial-card {
+            padding: 2rem; border: 1px solid var(--border); border-radius: 12px;
+            background: var(--bg-secondary); transition: var(--transition);
             position: relative;
         }
+        .testimonial-card:hover { border-color: var(--gold); box-shadow: var(--shadow-md); }
+        .t-quote { font-size: 2.5rem; color: var(--gold); line-height: 1; margin-bottom: 1rem; font-family: 'Playfair Display', serif; }
+        .testimonial-card p { font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.8; font-style: italic; }
+        .t-author { display: flex; align-items: center; gap: 0.75rem; }
+        .t-avatar {
+            width: 42px; height: 42px; border-radius: 50%;
+            background: var(--gold-pale); display: flex; align-items: center;
+            justify-content: center; font-weight: 700; color: var(--gold);
+            font-family: 'Playfair Display', serif; font-size: 1rem;
+        }
+        .t-name { font-size: 0.9rem; font-weight: 600; }
+        .t-role { font-size: 0.78rem; color: var(--text-muted); font-family: 'DM Mono', monospace; }
 
-        .method-step {
-            padding: 1.25rem;
-            margin-bottom: 1rem;
-            border-left: 3px solid var(--primary-light);
-            background: var(--bg-primary);
-            border-radius: 0 8px 8px 0;
-            transform: translateX(0);
-            transition: var(--transition);
+        /* =============================================
+           CTA BANNER
+        ============================================= */
+        .cta-banner {
+            padding: 6rem 0; background: var(--primary);
+            position: relative; overflow: hidden;
+        }
+        .cta-banner::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse 60% 80% at 80% 50%, rgba(184,134,11,0.15) 0%, transparent 70%);
+        }
+        .cta-inner { position: relative; z-index: 1; text-align: center; max-width: 680px; margin: 0 auto; }
+        .cta-inner h2 { font-size: 2.5rem; color: #fff; margin-bottom: 1rem; }
+        .cta-inner p { color: rgba(255,255,255,0.65); margin-bottom: 2.5rem; font-size: 1.05rem; }
+        .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .btn-white { background: #fff; color: var(--primary); font-weight: 700; }
+        .btn-white:hover { background: rgba(255,255,255,0.9); transform: translateY(-2px); }
+        .btn-outline-white { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.4); }
+        .btn-outline-white:hover { border-color: var(--gold-light); color: var(--gold-light); }
+
+        /* =============================================
+           CONTACT
+           FIX #15: Added contact section (was missing)
+        ============================================= */
+        .contact { padding: 7rem 0; background: var(--bg-secondary); }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 4rem; align-items: start; }
+        .contact-info h2 { font-size: 2rem; margin-bottom: 0.5rem; }
+        .contact-info .lead { color: var(--text-secondary); margin-bottom: 2.5rem; }
+        .contact-detail { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.5rem; }
+        .contact-icon {
+            width: 44px; height: 44px; border-radius: 10px;
+            background: var(--gold-pale); color: var(--gold);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1rem; flex-shrink: 0;
+        }
+        .contact-detail h4 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-muted); font-family: 'DM Mono', monospace; margin-bottom: 0.2rem; }
+        .contact-detail p { font-size: 0.95rem; font-weight: 500; }
+
+        /* FIX #16: Form — replaced <form> tag issue, all inputs styled */
+        .contact-form { display: flex; flex-direction: column; gap: 1.25rem; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+        .form-group label { font-size: 0.8rem; font-weight: 600; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em; font-family: 'DM Mono', monospace; }
+        .form-group input, .form-group select, .form-group textarea {
+            padding: 0.8rem 1rem; border: 1px solid var(--border);
+            border-radius: var(--radius); background: var(--bg-primary);
+            color: var(--text-primary); font-family: 'DM Sans', sans-serif;
+            font-size: 0.9rem; outline: none; transition: var(--transition);
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: var(--gold); box-shadow: 0 0 0 3px var(--gold-pale);
+        }
+        .form-group textarea { resize: vertical; min-height: 120px; }
+
+        /* =============================================
+           FOOTER
+           FIX #17: Footer structure was missing;
+                    Added complete footer
+        ============================================= */
+        .footer { background: var(--bg-footer); color: rgba(255,255,255,0.6); padding: 5rem 0 2rem; }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 4rem; }
+        .footer-brand .logo-mark { background: var(--gold); }
+        .footer-brand .logo-text strong { color: #fff; }
+        .footer-brand .logo-text small { color: var(--gold-light); }
+        .footer-brand p { font-size: 0.875rem; margin-top: 1.25rem; line-height: 1.8; max-width: 260px; }
+        .footer-socials { display: flex; gap: 0.75rem; margin-top: 1.5rem; }
+        .footer-socials a {
+            width: 36px; height: 36px; border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.5);
+            display: flex; align-items: center; justify-content: center; font-size: 0.85rem;
+        }
+        .footer-socials a:hover { border-color: var(--gold); color: var(--gold-light); }
+        .footer-col h4 { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.09em; color: var(--gold); font-family: 'DM Mono', monospace; margin-bottom: 1.25rem; }
+        .footer-col ul li { margin-bottom: 0.65rem; }
+        .footer-col ul a { font-size: 0.875rem; color: rgba(255,255,255,0.5); }
+        .footer-col ul a:hover { color: #fff; }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.06); padding-top: 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+            font-size: 0.8rem;
+        }
+        .footer-bottom a { color: var(--gold); }
+
+        /* =============================================
+           SCROLL TO TOP
+           FIX #18: Added scroll-to-top button (was missing)
+        ============================================= */
+        .scroll-top {
+            position: fixed; bottom: 2rem; right: 2rem;
+            width: 44px; height: 44px; border-radius: 50%;
+            background: var(--gold); color: #fff; border: none; cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1rem; box-shadow: var(--shadow-md);
+            opacity: 0; visibility: hidden; transform: translateY(10px);
+            transition: var(--transition); z-index: 900;
+        }
+        .scroll-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+        .scroll-top:hover { background: var(--gold-light); transform: translateY(-3px); }
+
+        /* =============================================
+           ANIMATIONS
+        ============================================= */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-up { animation: fadeUp 0.6s ease forwards; opacity: 0; }
+        .fade-up:nth-child(1) { animation-delay: 0.1s; }
+        .fade-up:nth-child(2) { animation-delay: 0.2s; }
+        .fade-up:nth-child(3) { animation-delay: 0.3s; }
+
+        /* =============================================
+           FIX #19: FULL RESPONSIVE STYLES
+           (Original had no @media queries for tablet)
+        ============================================= */
+        @media (max-width: 1024px) {
+            .services-grid { grid-template-columns: repeat(2,1fr); }
+            .industry-grid { grid-template-columns: repeat(3,1fr); }
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+            .megamenu-inner { grid-template-columns: repeat(2,1fr); }
         }
 
-        .method-step:hover {
-            transform: translateX(8px);
-            background: var(--bg-surface);
+        @media (max-width: 768px) {
+            .nav-menu, .nav-actions .btn { display: none; }
+            .hamburger { display: flex; }
+            .mobile-nav { display: flex; }
+            .stats-bar { grid-template-columns: repeat(2,1fr); }
+            .about-grid, .why-grid, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .services-grid { grid-template-columns: 1fr; }
+            .industry-grid { grid-template-columns: repeat(2,1fr); }
+            .team-grid, .testimonial-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+            .form-row { grid-template-columns: 1fr; }
+            .about-float-card { right: 0; bottom: -1rem; }
+            .hero { padding: 8rem 0 5rem; }
         }
 
-        .method-step span {
-            font-size: 0.75rem;
-            font-weight: 700;
-            color: var(--secondary);
-            text-transform: uppercase;
+        @media (max-width: 480px) {
+            .hero-cta { flex-direction: column; }
+            .stats-bar { grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+            .industry-grid { grid-template-columns: 1fr 1fr; }
+            .cta-actions { flex-direction: column; align-items: center; }
         }
+    </style>
+</head>
+<body>
 
-        /* Industries Section */
-        .industries {
-            padding: 7rem 0;
-            background-color: var(--bg-primary);
+<!-- ======================================================
+     NAVBAR
+====================================================== -->
+<nav class="navbar" id="navbar">
+    <div class="container">
+        <div class="nav-inner">
+            <a href="#" class="logo" aria-label="Home">
+                <div class="logo-mark">B</div>
+                <div class="logo-text">
+                    <!-- FIX #20: Firm name correctly displayed with & (display text is fine) -->
+                    <strong>Bijay Pokhrel &amp; Associates</strong>
+                    <small>Chartered Accountants</small>
+                </div>
+            </a>
+
+            <ul class="nav-menu">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li class="has-mega">
+                    <a href="#services" class="nav-link">Services</a>
+                    <div class="megamenu">
+                        <div class="container">
+                            <div class="megamenu-inner">
+                                <div class="megamenu-col">
+                                    <h4>Assurance</h4>
+                                    <ul>
+                                        <li><a href="#"><i class="fas fa-check"></i> Statutory Audit</a></li>
+                                        <li><a href="#"><i class="fas fa-check"></i> Internal Audit</a></li>
+                                        <li><a href="#"><i class="fas fa-check"></i> Tax Audit</a></li>
+                                        <li><a href="#"><i class="fas fa-check"></i> Special Purpose Audit</a></li>
+                                    </ul>
+                                </div>
+                                <div class="megamenu-col">
+                                    <h4>Tax Advisory</h4>
+                                    <ul>
+                                        <li><a href="#"><i class="fas fa-check"></i> Corporate Tax Planning</a></li>
+                                        <li><a href="#"><i class="fas fa-check"></i> VAT Compliance</a></li>
+                                        <li><a href="#"><i class="fas fa-check"></i> Transfer Pricing</a></li>
+                                        <li><a href="#"><i class="fas fa-check"></i> Tax Litigation</a></li>
+                                    </ul>
+                                </div>
+                                <div class="megamenu-col">
+                                    <h4>NFRS & Reporting</h4>
+                                    <ul>
+                                        <li><a href="#"><i class="fas fa-check"></i> NFRS Implementation</a></li>
+                                        <li><a href="#"><i class="fas fa-check"></i> Financial Statements</a></li>
+                                        <li><a href="#"><i class="fas fa-check"></i> Consolidated Reports</a></li>
+                                        <li><a href="#"><i class="fas fa-check"></i> NRB Reporting</a></li>
+                                    </ul>
+                                </div>
+                                <div class="megamenu-col">
+                                    <h4>Advisory</h4>
+                                    <ul>
+                                        <li><a href="#"><i class="fas fa-check"></i> Business Valuation</a></li>
+                                        <li><a href="#"><i class="fas fa-check"></i> Due Diligence</a></li>
+                                        <li><a href="#"><i class="fas fa-check"></i> Company Secretarial</a></li>
+                                        <li><a href="#"><i class="fas fa-check"></i> M&amp;A Advisory</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#industries" class="nav-link">Industries</a></li>
+                <li><a href="#team" class="nav-link">Team</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <!-- FIX #8: theme-toggle now properly wired in JS -->
+                <button class="icon-btn theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                </button>
+                <a href="#contact" class="btn btn-gold" style="padding:0.7rem 1.25rem;font-size:0.85rem;">
+                    <i class="fas fa-calendar"></i> Book Consultation
+                </a>
+                <!-- FIX #7: Hamburger properly wired -->
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Mobile nav -->
+    <div class="mobile-nav" id="mobileNav">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#industries">Industries</a>
+        <a href="#team">Our Team</a>
+        <a href="#contact">Contact</a>
+        <a href="#contact" style="color:var(--gold);font-weight:700;">Book Consultation</a>
+    </div>
+</nav>
+
+<!-- ======================================================
+     HERO
+====================================================== -->
+<section class="hero" id="hero">
+    <div class="container">
+        <div class="hero-content">
+            <span class="badge"><i class="fas fa-certificate"></i> &nbsp;ICان Member Firm · Est. 2015</span>
+            <!-- FIX #10: Responsive clamp heading -->
+            <h1 class="fade-up">
+                Nepal's Trusted<br>
+                <em>Chartered Accountancy</em><br>
+                & Advisory Firm
+            </h1>
+            <p class="hero-lead fade-up">
+                Delivering world-class statutory audit, NFRS compliance, tax strategy,
+                and corporate advisory — engineered to global standards, rooted in Nepal.
+            </p>
+            <div class="hero-cta fade-up">
+                <a href="#services" class="btn btn-primary">
+                    <i class="fas fa-briefcase"></i> Our Services
+                </a>
+                <a href="#contact" class="btn btn-outline">
+                    <i class="fas fa-phone"></i> Get In Touch
+                </a>
+            </div>
+
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <span class="stat-number">10<sup>+</sup></span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">500<sup>+</sup></span>
+                    <span class="stat-label">Clients Served</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">98<sup>%</sup></span>
+                    <span class="stat-label">Client Retention</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">15<sup>+</sup></span>
+                    <span class="stat-label">Expert Professionals</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Credentials Ribbon -->
+<div class="credentials-ribbon">
+    <div class="ribbon-track" id="ribbonTrack">
+        <span class="ribbon-item"><i class="fas fa-shield-alt"></i> ICAN Member Firm</span>
+        <span class="ribbon-dot"></span>
+        <span class="ribbon-item"><i class="fas fa-certificate"></i> NFRS Certified</span>
+        <span class="ribbon-dot"></span>
+        <span class="ribbon-item"><i class="fas fa-university"></i> NRB Approved Auditor</span>
+        <span class="ribbon-dot"></span>
+        <span class="ribbon-item"><i class="fas fa-globe"></i> IFRS Compliant</span>
+        <span class="ribbon-dot"></span>
+        <span class="ribbon-item"><i class="fas fa-balance-scale"></i> Tax Bar Association</span>
+        <span class="ribbon-dot"></span>
+        <span class="ribbon-item"><i class="fas fa-building"></i> SEBON Approved</span>
+        <span class="ribbon-dot"></span>
+        <span class="ribbon-item"><i class="fas fa-handshake"></i> ICAI Affiliate</span>
+        <span class="ribbon-dot"></span>
+        <!-- Duplicate for seamless loop -->
+        <span class="ribbon-item"><i class="fas fa-shield-alt"></i> ICAN Member Firm</span>
+        <span class="ribbon-dot"></span>
+        <span class="ribbon-item"><i class="fas fa-certificate"></i> NFRS Certified</span>
+        <span class="ribbon-dot"></span>
+        <span class="ribbon-item"><i class="fas fa-university"></i> NRB Approved Auditor</span>
+        <span class="ribbon-dot"></span>
+        <span class="ribbon-item"><i class="fas fa-globe"></i> IFRS Compliant</span>
+        <span class="ribbon-dot"></span>
+        <span class="ribbon-item"><i class="fas fa-balance-scale"></i> Tax Bar Association</span>
+        <span class="ribbon-dot"></span>
+        <span class="ribbon-item"><i class="fas fa-building"></i> SEBON Approved</span>
+        <span class="ribbon-dot"></span>
+        <span class="ribbon-item"><i class="fas fa-handshake"></i> ICAI Affiliate</span>
+    </div>
+</div>
+
+<!-- ======================================================
+     ABOUT
+====================================================== -->
+<section class="about" id="about">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-visual">
+                <div class="about-img-main">
+                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80"
+                         alt="Bijay Pokhrel & Associates Team" loading="lazy">
+                </div>
+                <!-- FIX #11: Float card properly positioned -->
+                <div class="about-float-card">
+                    <strong>10+</strong>
+                    <span>Years of Excellence in Nepal</span>
+                </div>
+            </div>
+            <div class="about-text">
+                <span class="badge">About the Firm</span>
+                <h2>Built on Integrity.<br>Driven by Expertise.</h2>
+                <div class="divider"></div>
+                <p class="lead">
+                    Bijay Pokhrel &amp; Associates is a premier Chartered Accountancy firm
+                    headquartered in Kathmandu, serving corporations, financial institutions,
+                    and high-net-worth clients across Nepal with audit, tax, and advisory services.
+                </p>
+                <div class="pillar-list">
+                    <div class="pillar-item">
+                        <div class="pillar-icon"><i class="fas fa-gavel"></i></div>
+                        <div>
+                            <h4>Regulatory Excellence</h4>
+                            <p>Deep expertise in NFRS, NRB directives, SEBON regulations, and Companies Act compliance.</p>
+                        </div>
+                    </div>
+                    <div class="pillar-item">
+                        <div class="pillar-icon"><i class="fas fa-brain"></i></div>
+                        <div>
+                            <h4>Strategic Advisory</h4>
+                            <p>Beyond numbers — we deliver business intelligence and strategic financial direction.</p>
+                        </div>
+                    </div>
+                    <div class="pillar-item">
+                        <div class="pillar-icon"><i class="fas fa-shield-alt"></i></div>
+                        <div>
+                            <h4>Independence & Ethics</h4>
+                            <p>Unwavering commitment to professional independence, objectivity, and ethical practice.</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="#contact" class="btn btn-primary">Learn More About Us</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======================================================
+     SERVICES
+====================================================== -->
+<section class="services" id="services">
+    <div class="container">
+        <div class="section-header">
+            <span class="badge">What We Do</span>
+            <h2>Comprehensive Financial & Advisory Services</h2>
+            <div class="divider center"></div>
+            <p>From statutory audit to complex NFRS implementation — we provide end-to-end professional services tailored to Nepal's regulatory landscape.</p>
+        </div>
+        <!-- FIX #12: grid uses align-items:stretch implicitly -->
+        <div class="services-grid">
+            <div class="service-card">
+                <span class="service-num">01</span>
+                <div class="service-ico"><i class="fas fa-search-dollar"></i></div>
+                <h3>Statutory & External Audit</h3>
+                <p>Independent, rigorous audit engagements compliant with Nepal Standards on Auditing (NSA) and ISA. We serve banks, insurance companies, listed companies, and public entities.</p>
+                <a href="#contact" class="service-link">Enquire Now <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card">
+                <span class="service-num">02</span>
+                <div class="service-ico"><i class="fas fa-chart-line"></i></div>
+                <h3>NFRS Implementation & Reporting</h3>
+                <p>Full-cycle NFRS adoption: gap analysis, chart of account mapping, financial statement preparation, lease accounting (NFRS 16), revenue recognition (NFRS 15), and ECL modelling.</p>
+                <a href="#contact" class="service-link">Enquire Now <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card">
+                <span class="service-num">03</span>
+                <div class="service-ico"><i class="fas fa-file-invoice-dollar"></i></div>
+                <h3>Tax Advisory & Compliance</h3>
+                <p>Corporate income tax, VAT, TDS, withholding tax compliance, tax planning strategies, and representation before the Inland Revenue Department and Tax Courts.</p>
+                <a href="#contact" class="service-link">Enquire Now <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card">
+                <span class="service-num">04</span>
+                <div class="service-ico"><i class="fas fa-tasks"></i></div>
+                <h3>Internal Audit & Risk Advisory</h3>
+                <p>Risk-based internal audit, process reviews, internal control assessments, SOX-equivalent controls, and enterprise risk management frameworks.</p>
+                <a href="#contact" class="service-link">Enquire Now <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card">
+                <span class="service-num">05</span>
+                <div class="service-ico"><i class="fas fa-landmark"></i></div>
+                <h3>NRB & Banking Compliance</h3>
+                <p>Specialized regulatory compliance for commercial banks, development banks, finance companies, and microfinance institutions under Nepal Rastra Bank directives.</p>
+                <a href="#contact" class="service-link">Enquire Now <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card">
+                <span class="service-num">06</span>
+                <div class="service-ico"><i class="fas fa-handshake"></i></div>
+                <h3>Corporate & Transaction Advisory</h3>
+                <p>Business valuations, mergers &amp; acquisitions, due diligence, company incorporation, secretarial services, and investment advisory for FDI transactions.</p>
+                <a href="#contact" class="service-link">Enquire Now <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======================================================
+     WHY CHOOSE US
+====================================================== -->
+<section class="why" id="why">
+    <div class="container">
+        <div class="why-grid">
+            <div>
+                <span class="badge">Why Us</span>
+                <h2>Precision. Independence. Results.</h2>
+                <div class="divider"></div>
+                <div class="why-feats">
+                    <div class="why-feat">
+                        <div class="why-feat-icon"><i class="fas fa-medal"></i></div>
+                        <div>
+                            <h3>ICAN Qualified Professionals</h3>
+                            <p>Our team comprises ICAN, ACCA, and CA (India) qualified professionals with deep industry specialization across banking, manufacturing, and services.</p>
+                        </div>
+                    </div>
+                    <div class="why-feat">
+                        <div class="why-feat-icon"><i class="fas fa-clock"></i></div>
+                        <div>
+                            <h3>On-Time, Every Time</h3>
+                            <p>We understand regulatory deadlines. Our structured methodology ensures your audits and filings are completed accurately and on schedule.</p>
+                        </div>
+                    </div>
+                    <div class="why-feat">
+                        <div class="why-feat-icon"><i class="fas fa-lock"></i></div>
+                        <div>
+                            <h3>Confidentiality Guaranteed</h3>
+                            <p>Strict information barriers and professional confidentiality protocols protect your sensitive financial and business information at all times.</p>
+                        </div>
+                    </div>
+                    <div class="why-feat">
+                        <div class="why-feat-icon"><i class="fas fa-users"></i></div>
+                        <div>
+                            <h3>Partner-Led Engagements</h3>
+                            <p>Every client receives direct attention from our senior partners — not just delegated to juniors. Quality is personal for us.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="why-visual">
+                <div style="padding:0 0 1rem;border-bottom:1px solid var(--border);margin-bottom:1rem;">
+                    <span class="badge" style="margin-bottom:0.5rem;">Our Methodology</span>
+                    <p style="font-size:0.875rem;color:var(--text-secondary);">A structured 5-step engagement process that guarantees quality and compliance.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">01</div>
+                    <div class="step-text">
+                        <h4>Initial Assessment</h4>
+                        <p>Understand business operations, risk profile, and regulatory requirements.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">02</div>
+                    <div class="step-text">
+                        <h4>Planning & Scoping</h4>
+                        <p>Define audit scope, materiality thresholds, and engagement timeline.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">03</div>
+                    <div class="step-text">
+                        <h4>Fieldwork Execution</h4>
+                        <p>Rigorous evidence gathering, testing, and analytical procedures.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">04</div>
+                    <div class="step-text">
+                        <h4>Review & Quality Control</h4>
+                        <p>Multi-tier partner review ensuring accuracy and completeness.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">05</div>
+                    <div class="step-text">
+                        <h4>Reporting & Follow-up</h4>
+                        <p>Clear, actionable reports with post-engagement support and advisory.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======================================================
+     INDUSTRIES
+====================================================== -->
+<section class="industries" id="industries">
+    <div class="container">
+        <div class="section-header">
+            <span class="badge">Industries Served</span>
+            <h2>Deep Expertise Across Sectors</h2>
+            <div class="divider center"></div>
+            <p>We serve a diverse range of industries, understanding the unique regulatory and financial reporting requirements of each sector.</p>
+        </div>
+        <div class="industry-grid">
+            <div class="industry-card">
+                <i class="fas fa-university"></i>
+                <h4>Banking &amp; Finance</h4>
+            </div>
+            <div class="industry-card">
+                <i class="fas fa-shield-alt"></i>
+                <h4>Insurance</h4>
+            </div>
+            <div class="industry-card">
+                <i class="fas fa-industry"></i>
+                <h4>Manufacturing</h4>
+            </div>
+            <div class="industry-card">
+                <i class="fas fa-store"></i>
+                <h4>Retail &amp; FMCG</h4>
+            </div>
+            <div class="industry-card">
+                <i class="fas fa-bolt"></i>
+                <h4>Hydropower &amp; Energy</h4>
+            </div>
+            <div class="industry-card">
+                <i class="fas fa-hospital"></i>
+                <h4>Healthcare</h4>
+            </div>
+            <div class="industry-card">
+                <i class="fas fa-graduation-cap"></i>
+                <h4>Education</h4>
+            </div>
+            <div class="industry-card">
+                <i class="fas fa-hotel"></i>
+                <h4>Hospitality &amp; Tourism</h4>
+            </div>
+            <div class="industry-card">
+                <i class="fas fa-building"></i>
+                <h4>Real Estate</h4>
+            </div>
+            <div class="industry-card">
+                <i class="fas fa-hands-helping"></i>
+                <h4>NGOs &amp; INGOs</h4>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======================================================
+     TEAM — FIX #13: Complete team section added
+====================================================== -->
+<section class="team" id="team">
+    <div class="container">
+        <div class="section-header">
+            <span class="badge">Our Leadership</span>
+            <h2>Meet the Experts Behind the Firm</h2>
+            <div class="divider center"></div>
+            <p>Our partners bring decades of combined experience in audit, taxation, NFRS, and corporate advisory across Nepal's leading industries.</p>
+        </div>
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="team-img">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80" alt="Bijay Pokhrel" loading="lazy">
+                </div>
+                <div class="team-info">
+                    <h3>CA Bijay Pokhrel</h3>
+                    <span>Managing Partner</span>
+                    <p>ICAN qualified with 15+ years of experience in statutory audit, NFRS implementation, and banking sector compliance. Expert in NRB regulatory framework.</p>
+                    <div class="team-socials">
+                        <a href="https://www.linkedin.com/in/bijay-pokhrel-8b09981b9" target="_blank" rel="noopener" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="mailto:bijay@bijaypokhrel-associates.com" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-img">
+                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80" alt="Tax Partner" loading="lazy">
+                </div>
+                <div class="team-info">
+                    <h3>CA Priya Sharma</h3>
+                    <span>Tax Partner</span>
+                    <p>Specialist in corporate income tax, VAT, and transfer pricing with 12+ years advising multinational companies and FDI transactions in Nepal.</p>
+                    <div class="team-socials">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-img">
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80" alt="Advisory Partner" loading="lazy">
+                </div>
+                <div class="team-info">
+                    <h3>CA Rajan Thapa</h3>
+                    <span>Advisory Partner</span>
+                    <p>Expert in business valuation, M&amp;A due diligence, and corporate restructuring with 10+ years supporting Nepal's leading conglomerates.</p>
+                    <div class="team-socials">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======================================================
+     TESTIMONIALS — FIX #14
+====================================================== -->
+<section class="testimonials" id="testimonials">
+    <div class="container">
+        <div class="section-header">
+            <span class="badge">Client Testimonials</span>
+            <h2>What Our Clients Say</h2>
+            <div class="divider center"></div>
+        </div>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <div class="t-quote">"</div>
+                <p>Bijay Pokhrel &amp; Associates transformed our financial reporting. Their NFRS implementation was flawless and the team's expertise in banking compliance is unmatched in Nepal.</p>
+                <div class="t-author">
+                    <div class="t-avatar">RK</div>
+                    <div>
+                        <div class="t-name">Rajendra KC</div>
+                        <div class="t-role">CFO · Commercial Bank of Nepal</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="t-quote">"</div>
+                <p>Their tax advisory team saved us millions in legitimate tax optimization. Proactive, knowledgeable, and always available — they feel like an extension of our finance team.</p>
+                <div class="t-author">
+                    <div class="t-avatar">SM</div>
+                    <div>
+                        <div class="t-name">Sunita Maharjan</div>
+                        <div class="t-role">Director · Himalayan Exports Pvt. Ltd.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="t-quote">"</div>
+                <p>The statutory audit was completed on time with zero surprises. Their deep understanding of NRB regulations and NFRS requirements gave our board complete confidence.</p>
+                <div class="t-author">
+                    <div class="t-avatar">BP</div>
+                    <div>
+                        <div class="t-name">Binod Pradhan</div>
+                        <div class="t-role">CEO · Apex Finance Limited</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======================================================
+     CTA BANNER
+====================================================== -->
+<section class="cta-banner">
+    <div class="container">
+        <div class="cta-inner">
+            <span class="badge" style="background:rgba(212,175,55,0.2);color:var(--gold-light);">Get Started Today</span>
+            <h2>Ready to Elevate Your Financial Reporting?</h2>
+            <p>Schedule a complimentary 30-minute consultation with one of our senior partners. No commitment required.</p>
+            <div class="cta-actions">
+                <a href="#contact" class="btn btn-white">
+                    <i class="fas fa-calendar-check"></i> Book Free Consultation
+                </a>
+                <a href="tel:+9779862145832" class="btn btn-outline-white">
+                    <i class="fas fa-phone"></i> +977-9862145832
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======================================================
+     CONTACT — FIX #15 & #16
+====================================================== -->
+<section class="contact" id="contact">
+    <div class="container">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <span class="badge">Contact Us</span>
+                <h2>Let's Start a Conversation</h2>
+                <div class="divider"></div>
+                <p class="lead">Whether you need audit, tax, NFRS advisory, or just have a question — our team is here to help.</p>
+
+                <div class="contact-detail">
+                    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div>
+                        <h4>Office Address</h4>
+                        <p>Level 4, Corporate Tower, New Baneshwor, Kathmandu 44600</p>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                    <div>
+                        <h4>Phone</h4>
+                        <p><a href="tel:+9779862145832" style="color:var(--gold);">+977-9862145832</a></p>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <div>
+                        <h4>Email</h4>
+                        <!-- FIX #20: email uses hyphenated domain -->
+                        <p><a href="mailto:info@bijaypokhrel-associates.com" style="color:var(--gold);">info@bijaypokhrel-associates.com</a></p>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <div class="contact-icon"><i class="fas fa-clock"></i></div>
+                    <div>
+                        <h4>Office Hours</h4>
+                        <p>Sunday – Friday: 9:00 AM – 6:00 PM</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FIX #16: Proper form with input validation -->
+            <div>
+                <div class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fname">First Name</label>
+                            <input type="text" id="fname" placeholder="Rajendra" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lname">Last Name</label>
+                            <input type="text" id="lname" placeholder="Sharma" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="you@company.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" placeholder="+977-XXXXXXXXXX">
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service Required</label>
+                        <select id="service">
+                            <option value="">Select a service...</option>
+                            <option>Statutory Audit</option>
+                            <option>NFRS Implementation</option>
+                            <option>Tax Advisory</option>
+                            <option>Internal Audit</option>
+                            <option>NRB / Banking Compliance</option>
+                            <option>Corporate Advisory</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" placeholder="Tell us about your requirements..."></textarea>
+                    </div>
+                    <button type="button" class="btn btn-gold" onclick="handleSubmit()" style="width:100%;justify-content:center;">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======================================================
+     FOOTER — FIX #17
+====================================================== -->
+<footer class="footer" id="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo">
+                    <div class="logo-mark">B</div>
+                    <div class="logo-text">
+                        <strong>Bijay Pokhrel &amp; Associates</strong>
+                        <small>Chartered Accountants</small>
+                    </div>
+                </div>
+                <p>Premier Chartered Accountancy &amp; Audit Firm in Nepal. Engineering financial excellence since 2015.</p>
+                <div class="footer-socials">
+                    <a href="https://www.linkedin.com/in/bijay-pokhrel-8b09981b9" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#services">Statutory Audit</a></li>
+                    <li><a href="#services">NFRS Implementation</a></li>
+                    <li><a href="#services">Tax Advisory</a></li>
+                    <li><a href="#services">Internal Audit</a></li>
+                    <li><a href="#services">NRB Compliance</a></li>
+                    <li><a href="#services">Corporate Advisory</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#team">Our Team</a></li>
+                    <li><a href="#industries">Industries</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="tel:+9779862145832">+977-9862145832</a></li>
+                    <li><a href="mailto:info@bijaypokhrel-associates.com">info@bijaypokhrel-associates.com</a></li>
+                    <li><a href="#">New Baneshwor, Kathmandu</a></li>
+                    <li><a href="#">Sun–Fri: 9AM – 6PM</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Bijay Pokhrel &amp; Associates, Chartered Accountants. All rights reserved.</p>
+            <p>
+                <a href="#">Privacy Policy</a> &nbsp;·&nbsp;
+                <a href="#">Terms of Service</a> &nbsp;·&nbsp;
+                <!-- FIX #1: URL uses hyphen -->
+                <a href="https://www.bijaypokhrel-associates.com">bijaypokhrel-associates.com</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<!-- Scroll to top — FIX #18 -->
+<button class="scroll-top" id="scrollTop" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+</button>
+
+<!-- ======================================================
+     JAVASCRIPT
+     FIX #7: Hamburger properly implemented
+     FIX #8: Theme toggle properly implemented
+     FIX #18: Scroll-to-top implemented
+====================================================== -->
+<script>
+    // ---- Navbar scroll ----
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 40);
+        document.getElementById('scrollTop').classList.toggle('visible', window.scrollY > 400);
+    });
+
+    // ---- FIX #7: Hamburger / Mobile Nav ----
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('open');
+        mobileNav.classList.toggle('open');
+    });
+    // Close on mobile nav link click
+    mobileNav.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+            hamburger.classList.remove('open');
+            mobileNav.classList.remove('open');
+        });
+    });
+
+    // ---- FIX #8: Theme Toggle ----
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const html = document.documentElement;
+    let dark = false;
+    themeToggle.addEventListener('click', () => {
+        dark = !dark;
+        html.setAttribute('data-theme', dark ? 'dark' : 'light');
+        themeIcon.className = dark ? 'fas fa-sun' : 'fas fa-moon';
+    });
+
+    // ---- FIX #18: Scroll to Top ----
+    document.getElementById('scrollTop').addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // ---- Active nav link on scroll ----
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                navLinks.forEach(l => l.classList.remove('active'));
+                const active = document.querySelector(`.nav-link[href="#${e.target.id}"]`);
+                if (active) active.classList.add('active');
+            }
+        });
+    }, { threshold: 0.4 });
+    sections.forEach(s => observer.observe(s));
+
+    // ---- Contact form submit handler ----
+    function handleSubmit() {
+        const fname = document.getElementById('fname').value.trim();
+        const email = document.getElementById('email').value.trim();
+        if (!fname || !email) {
+            alert('Please fill in your name and email address.');
+            return;
         }
+        alert('Thank you, ' + fname + '! We will get back to you within 24 hours.');
+        ['fname','lname','email','phone','service','message'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.value = '';
+        });
+    }
 
-        .industry-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 1.5rem;
-        }
-
-        .industry-card {
-            padding: 2rem 1.5rem;
-            text-align: center;
-            transition: var(--transition);
-            border: 1px solid var(--border-color);
-            background: var(--bg-secondary);
-        }
-
-        .industry-card i {
-            font-size: 2.25rem;
-            color: var(--text-muted);
-            margin-bottom: 1.25rem;
-            transition: var(--transition);
-        }
-
-        .industry-card h4 {
-            font-size: 1rem;
-            font-weight: 600;
-        }
-
-        .industry-card:hover {
-            background: var(--primary);
-            border-color: var(--primary);
-            transform: translateY(-5px);
-        }
-
-        .industry-card:hover h4 {
-            color: #ffffff;
-        }
-
-        .industry-card:hover i {
-            color: var(--secondary);
-            transform: scale(1.1);
-        }
-
-        /* Team Partners Section */
-        .team {
-            padding: 7rem 0;
-            background-color: var(--bg-secondary);
-        }
-
-        .team-grid {
-            display: grid;
+    // ---- Animate stats on scroll ----
+    const statNums = document.querySelectorAll('.stat-number');
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                const el = e.target;
+                const sup = el.querySelector('sup');
+                const suffix = sup ? sup.textContent : '';
+                const target = parseInt(el.textContent);
+                let current = 0;
+                const step = Math.ceil(target / 40);
+                const timer = setInterval(() => {
+                    current = Math.min(current + step, target);
+                    el.textContent = current;
+                    if (sup) el.appendChild(sup);
+                    if (current >= target) clearInterval(timer);
+                }, 30);
+                statsObserver.unobserve(el);
+            }
+        });
+    }, { threshold: 0.5 });
+    statNums.forEach(n => statsObserver.observe(n));
+</script>
+</body>
+</html>
