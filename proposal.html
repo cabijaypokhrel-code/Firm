@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Request a Proposal | Bijay Pokhrel & Associates, Chartered Accountants</title>
+<meta name="description" content="Request a fee proposal for audit, tax, or advisory services. A senior partner responds within 1 business day.">
+<meta name="robots" content="index, follow">
+<style>
+/* ============================================================
+   PROPOSAL FORM — design tokens aligned with assets/design-system.css
+   ============================================================ */
+:root {
+    --navy-800: #102341;
+    --navy-700: #16325c;
+    --slate-900: #1a202c;
+    --slate-700: #3d4a5c;
+    --slate-500: #5d6b7e;
+    --slate-300: #c2cad6;
+    --slate-100: #eef1f5;
+    --paper: #fafbfc;
+    --white: #ffffff;
+    --accent-600: #b54708;
+    --accent-700: #93390a;
+    --accent-100: #fdeadd;
+    --error-600: #b42318;
+    --error-100: #fdecea;
+    --success-600: #196b3a;
+    --success-100: #e6f4ec;
+    --radius: 2px;
+    --space-1: 0.5rem; --space-2: 1rem; --space-3: 1.5rem;
+    --space-4: 2rem;  --space-6: 3rem;
+    --font: "Inter", "Roboto", -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: var(--font); font-size: 1rem; line-height: 1.6;
+    color: var(--slate-700); background: var(--slate-100);
+    min-height: 100vh; display: flex; flex-direction: column;
+    align-items: center; padding: var(--space-6) var(--space-2);
+}
+.form-shell { width: 100%; max-width: 38rem; }
+.form-shell > header { margin-bottom: var(--space-4); }
+.form-shell h1 { font-size: 1.953rem; color: var(--slate-900); letter-spacing: -0.015em; line-height: 1.2; }
+.form-shell header p { margin-top: var(--space-1); color: var(--slate-500); font-size: 0.9rem; }
+.sla-note { display: inline-block; margin-top: var(--space-2); padding: var(--space-1) var(--space-2);
+    background: var(--white); border-left: 2px solid var(--accent-600);
+    font-size: 0.8rem; font-weight: 600; color: var(--slate-700); }
+
+/* ---- Progress bar ---- */
+.progress { margin-bottom: var(--space-4); }
+.progress-track { height: 4px; background: var(--slate-300); border-radius: var(--radius); overflow: hidden; }
+.progress-fill { height: 100%; width: 33.33%; background: var(--accent-600); transition: width 300ms var(--ease); }
+.progress-steps { display: flex; justify-content: space-between; margin-top: var(--space-1);
+    font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--slate-500); }
+.progress-steps span[aria-current="step"] { color: var(--accent-700); }
+.progress-steps .done { color: var(--success-600); }
+
+/* ---- Card & steps ---- */
+.form-card { background: var(--white); border: 1px solid var(--slate-300);
+    border-top: 2px solid var(--accent-600); border-radius: var(--radius);
+    padding: var(--space-4); }
+.form-step { display: none; }
+.form-step.active { display: block; animation: stepIn 250ms var(--ease); }
+@keyframes stepIn { from { opacity: 0; transform: translateX(8px); } to { opacity: 1; transform: none; } }
+.form-step h2 { font-size: 1.25rem; color: var(--slate-900); margin-bottom: var(--space-3); }
+
+/* ---- Fields ---- */
+fieldset { border: 0; }
+legend { font-size: 1.25rem; font-weight: 700; color: var(--slate-900); margin-bottom: var(--space-3); }
+.field { margin-bottom: var(--space-3); }
+.field label { display: block; font-size: 0.8rem; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.04em; color: var(--slate-700); margin-bottom: var(--space-1); }
+.field label .req { color: var(--error-600); }
+.field input[type="text"], .field input[type="email"], .field input[type="tel"], .field select, .field textarea {
+    width: 100%; padding: 0.75rem var(--space-2); font: inherit; font-size: 0.95rem;
+    color: var(--slate-900); background: var(--paper);
+    border: 1px solid var(--slate-300); border-radius: var(--radius);
+    transition: border-color 150ms var(--ease), box-shadow 150ms var(--ease);
+}
+/* ACTIVE state */
+.field input:focus, .field select:focus, .field textarea:focus {
+    outline: none; border-color: var(--navy-700);
+    box-shadow: 0 0 0 3px rgba(22, 50, 92, 0.15);
+}
+/* ERROR state */
+.field.has-error input, .field.has-error select {
+    border-color: var(--error-600); background: var(--error-100);
+}
+.field.has-error input:focus, .field.has-error select:focus {
+    box-shadow: 0 0 0 3px rgba(180, 35, 24, 0.15);
+}
+.field-error { display: none; margin-top: var(--space-1); font-size: 0.8rem; color: var(--error-600); font-weight: 500; }
+.field.has-error .field-error { display: block; }
+.field-hint { margin-top: var(--space-1); font-size: 0.78rem; color: var(--slate-500); }
+
+/* Radio cards (service type / firm size) */
+.choice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2); }
+.choice { position: relative; }
+.choice input { position: absolute; opacity: 0; width: 100%; height: 100%; cursor: pointer; }
+.choice label {
+    display: block; padding: var(--space-2); height: 100%;
+    border: 1px solid var(--slate-300); border-radius: var(--radius);
+    background: var(--paper); cursor: pointer; text-transform: none; letter-spacing: 0;
+    transition: border-color 150ms var(--ease), background-color 150ms var(--ease);
+}
+.choice label strong { display: block; font-size: 0.9rem; color: var(--slate-900); }
+.choice label small { font-size: 0.78rem; color: var(--slate-500); font-weight: 400; }
+.choice input:focus-visible + label { outline: 2px solid var(--accent-600); outline-offset: 2px; }
+.choice input:checked + label { border-color: var(--accent-600); background: var(--accent-100); }
+.choice input:checked + label strong { color: var(--accent-700); }
+@media (max-width: 30rem) { .choice-grid { grid-template-columns: 1fr; } }
+
+/* ---- Buttons / nav row ---- */
+.form-nav { display: flex; justify-content: space-between; gap: var(--space-2);
+    margin-top: var(--space-4); padding-top: var(--space-3); border-top: 1px solid var(--slate-100); }
+.btn { display: inline-flex; align-items: center; justify-content: center;
+    padding: 0.875rem var(--space-3); font: 600 0.8rem/1 var(--font);
+    text-transform: uppercase; letter-spacing: 0.04em;
+    border: 1px solid transparent; border-radius: var(--radius); cursor: pointer;
+    transition: background-color 150ms var(--ease); }
+.btn:focus-visible { outline: 2px solid var(--accent-600); outline-offset: 2px; }
+.btn-primary { background: var(--accent-600); color: var(--white); }
+.btn-primary:hover { background: var(--accent-700); }
+.btn-ghost { background: transparent; color: var(--navy-800); border-color: var(--slate-300); }
+.btn-ghost:hover { border-color: var(--navy-800); }
+.btn[hidden] { display: none; }
+
+/* ---- SUCCESS state ---- */
+.success-panel { display: none; text-align: left; }
+.success-panel.visible { display: block; animation: stepIn 250ms var(--ease); }
+.success-mark { width: 56px; height: 56px; border-radius: 50%;
+    background: var(--success-100); color: var(--success-600);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem; margin-bottom: var(--space-3); }
+.success-panel h2 { font-size: 1.563rem; color: var(--slate-900); margin-bottom: var(--space-2); }
+.success-panel p { margin-bottom: var(--space-2); font-size: 0.95rem; }
+.success-timeline { margin: var(--space-3) 0; border: 1px solid var(--slate-300); border-radius: var(--radius); }
+.success-timeline li { display: flex; gap: var(--space-2); padding: var(--space-2);
+    border-bottom: 1px solid var(--slate-100); font-size: 0.875rem; list-style: none; }
+.success-timeline li:last-child { border-bottom: 0; }
+.success-timeline .when { flex-shrink: 0; width: 9rem; font-weight: 700;
+    color: var(--navy-800); font-variant-numeric: tabular-nums; }
+.success-ref { font-size: 0.8rem; color: var(--slate-500); }
+.success-ref strong { color: var(--slate-900); font-family: ui-monospace, "Roboto Mono", monospace; }
+
+/* Honor reduced motion */
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+</style>
+</head>
+<body>
+
+<div class="form-shell">
+    <header>
+        <h1>Request a Proposal</h1>
+        <p>Three short steps. We only ask what we need to scope your engagement and fee.</p>
+        <span class="sla-note">A senior partner responds within 1 business day.</span>
+    </header>
+
+    <!-- Progress -->
+    <div class="progress">
+        <div class="progress-track" role="progressbar" aria-label="Form progress"
+             aria-valuemin="1" aria-valuemax="3" aria-valuenow="1" id="progressbar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <div class="progress-steps" id="progressSteps">
+            <span data-step="1" aria-current="step">1 · Service</span>
+            <span data-step="2">2 · Your Organization</span>
+            <span data-step="3">3 · Contact</span>
+        </div>
+    </div>
+
+    <div class="form-card">
+        <form id="proposalForm" novalidate>
+
+            <!-- ============ STEP 1: SERVICE TYPE ============ -->
+            <div class="form-step active" data-step="1" role="group" aria-labelledby="s1-title">
+                <fieldset>
+                    <legend id="s1-title">Which service do you need?</legend>
+                    <div class="field has-choice" id="field-service">
+                        <div class="choice-grid">
+                            <div class="choice">
+                                <input type="radio" name="service" id="svc-audit" value="Audit & Assurance">
+                                <label for="svc-audit"><strong>Audit &amp; Assurance</strong><small>Statutory, internal, tax or special-purpose audit</small></label>
+                            </div>
+                            <div class="choice">
+                                <input type="radio" name="service" id="svc-tax" value="Tax & Compliance">
+                                <label for="svc-tax"><strong>Tax &amp; Compliance</strong><small>Corporate tax, VAT/TDS, transfer pricing, litigation</small></label>
+                            </div>
+                            <div class="choice">
+                                <input type="radio" name="service" id="svc-advisory" value="Advisory & Consulting">
+                                <label for="svc-advisory"><strong>Advisory &amp; Consulting</strong><small>NFRS, NRB compliance, valuation, due diligence</small></label>
+                            </div>
+                            <div class="choice">
+                                <input type="radio" name="service" id="svc-unsure" value="Not sure yet">
+                                <label for="svc-unsure"><strong>Not sure yet</strong><small>A partner will help you scope the need</small></label>
+                            </div>
+                        </div>
+                        <p class="field-error" id="err-service" role="alert">Please select a service so we can route you to the right partner.</p>
+                    </div>
+                </fieldset>
+            </div>
+
+            <!-- ============ STEP 2: FIRM SIZE / REVENUE ============ -->
+            <div class="form-step" data-step="2" role="group" aria-labelledby="s2-title">
+                <fieldset>
+                    <legend id="s2-title">About your organization</legend>
+                    <div class="field" id="field-orgname">
+                        <label for="orgname">Organization name <span class="req" aria-hidden="true">*</span></label>
+                        <input type="text" id="orgname" name="orgname" autocomplete="organization" required>
+                        <p class="field-error" id="err-orgname" role="alert">Please enter your organization's name.</p>
+                    </div>
+                    <div class="field" id="field-industry">
+                        <label for="industry">Industry <span class="req" aria-hidden="true">*</span></label>
+                        <select id="industry" name="industry" required>
+                            <option value="">Select your industry…</option>
+                            <option>Banking &amp; Financial Institutions</option>
+                            <option>Insurance</option>
+                            <option>Manufacturing</option>
+                            <option>Hydropower &amp; Energy</option>
+                            <option>Healthcare</option>
+                            <option>Education</option>
+                            <option>Hospitality &amp; Tourism</option>
+                            <option>Real Estate</option>
+                            <option>Retail &amp; FMCG</option>
+                            <option>NGO / INGO</option>
+                            <option>Technology</option>
+                            <option>Other</option>
+                        </select>
+                        <p class="field-error" id="err-industry" role="alert">Please select your industry.</p>
+                    </div>
+                    <div class="field has-choice" id="field-revenue">
+                        <label id="revenue-label">Annual revenue (NPR) <span class="req" aria-hidden="true">*</span></label>
+                        <div class="choice-grid" role="radiogroup" aria-labelledby="revenue-label">
+                            <div class="choice">
+                                <input type="radio" name="revenue" id="rev-1" value="Under 10 Crore">
+                                <label for="rev-1"><strong>Under 10 Crore</strong></label>
+                            </div>
+                            <div class="choice">
+                                <input type="radio" name="revenue" id="rev-2" value="10–50 Crore">
+                                <label for="rev-2"><strong>10 – 50 Crore</strong></label>
+                            </div>
+                            <div class="choice">
+                                <input type="radio" name="revenue" id="rev-3" value="50–100 Crore">
+                                <label for="rev-3"><strong>50 – 100 Crore</strong></label>
+                            </div>
+                            <div class="choice">
+                                <input type="radio" name="revenue" id="rev-4" value="Over 100 Crore">
+                                <label for="rev-4"><strong>Over 100 Crore</strong></label>
+                            </div>
+                        </div>
+                        <p class="field-hint">Used only to assign the right partner and team size. Kept strictly confidential.</p>
+                        <p class="field-error" id="err-revenue" role="alert">Please select a revenue band.</p>
+                    </div>
+                </fieldset>
+            </div>
+
+            <!-- ============ STEP 3: CONTACT ============ -->
+            <div class="form-step" data-step="3" role="group" aria-labelledby="s3-title">
+                <fieldset>
+                    <legend id="s3-title">Where should the proposal go?</legend>
+                    <div class="field" id="field-name">
+                        <label for="fullname">Full name <span class="req" aria-hidden="true">*</span></label>
+                        <input type="text" id="fullname" name="fullname" autocomplete="name" required>
+                        <p class="field-error" id="err-name" role="alert">Please enter your full name.</p>
+                    </div>
+                    <div class="field" id="field-email">
+                        <label for="email">Business email <span class="req" aria-hidden="true">*</span></label>
+                        <input type="email" id="email" name="email" autocomplete="email"
+                               placeholder="you@yourcompany.com" required
+                               aria-describedby="hint-email err-email">
+                        <p class="field-hint" id="hint-email">Please use your company email — proposals are sent to business addresses only.</p>
+                        <p class="field-error" id="err-email" role="alert"></p>
+                    </div>
+                    <div class="field" id="field-phone">
+                        <label for="phone">Phone <span class="req" aria-hidden="true">*</span></label>
+                        <input type="tel" id="phone" name="phone" autocomplete="tel"
+                               placeholder="+977 98XXXXXXXX" required aria-describedby="err-phone">
+                        <p class="field-error" id="err-phone" role="alert"></p>
+                    </div>
+                    <div class="field" id="field-notes">
+                        <label for="notes">Anything we should know? <small>(optional)</small></label>
+                        <textarea id="notes" name="notes" rows="3"
+                                  placeholder="Deadlines, regulator involved, current auditor, scope…"></textarea>
+                    </div>
+                </fieldset>
+            </div>
+
+            <!-- ============ NAV ============ -->
+            <div class="form-nav" id="formNav">
+                <button type="button" class="btn btn-ghost" id="btnBack" hidden>&larr; Back</button>
+                <button type="button" class="btn btn-primary" id="btnNext">Continue &rarr;</button>
+                <button type="submit" class="btn btn-primary" id="btnSubmit" hidden>Request Proposal</button>
+            </div>
+        </form>
+
+        <!-- ============ SUCCESS STATE ============ -->
+        <div class="success-panel" id="successPanel" tabindex="-1" role="status">
+            <div class="success-mark" aria-hidden="true">&#10003;</div>
+            <h2>Your proposal request is with us.</h2>
+            <p id="successIntro">Thank you. Here is exactly what happens next:</p>
+            <ul class="success-timeline">
+                <li><span class="when">Within 1 hour</span><span>You'll receive an email confirmation at the address you provided.</span></li>
+                <li><span class="when" id="slaPartner">By tomorrow</span><span>A senior partner reviews your requirements and calls you to clarify scope.</span></li>
+                <li><span class="when">Within 3 days</span><span>You receive a written fee proposal with team, timeline, and deliverables.</span></li>
+            </ul>
+            <p class="success-ref">Your reference: <strong id="refCode"></strong> — quote it if you call us at +977-9862145832.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+(function () {
+    'use strict';
+
+    /* ============================================================
+       MULTI-STEP FORM CONTROLLER
+       Step 1: Service type → Step 2: Firm size/revenue → Step 3: Contact
+       ============================================================ */
+    var TOTAL_STEPS = 3;
+    var currentStep = 1;
+
+    var form = document.getElementById('proposalForm');
+    var steps = form.querySelectorAll('.form-step');
+    var btnBack = document.getElementById('btnBack');
+    var btnNext = document.getElementById('btnNext');
+    var btnSubmit = document.getElementById('btnSubmit');
+    var progressFill = document.getElementById('progressFill');
+    var progressbar = document.getElementById('progressbar');
+    var stepLabels = document.querySelectorAll('#progressSteps span');
+
+    /* ---------- Validation rules ---------- */
+
+    // Free/personal email providers are rejected: proposals go to business addresses.
+    var FREE_EMAIL_DOMAINS = [
+        'gmail.com', 'googlemail.com', 'yahoo.com', 'yahoo.in', 'ymail.com',
+        'hotmail.com', 'outlook.com', 'live.com', 'msn.com',
+        'aol.com', 'icloud.com', 'me.com', 'protonmail.com', 'proton.me',
+        'zoho.com', 'mail.com', 'gmx.com', 'yandex.com', 'rediffmail.com'
+    ];
+
+    function validateBusinessEmail(value) {
+        var v = value.trim().toLowerCase();
+        if (!v) return 'Please enter your email address.';
+        // RFC-ish shape check: local@domain.tld
+        var m = v.match(/^[a-z0-9.!#$%&'*+/=?^_`{|}~-]+@([a-z0-9-]+(?:\.[a-z0-9-]+)+)$/);
+        if (!m) return 'That doesn’t look like a valid email address.';
+        var domain = m[1];
+        if (FREE_EMAIL_DOMAINS.indexOf(domain) !== -1) {
+            return 'Please use your business email (personal providers like @' + domain + ' aren’t accepted for proposals).';
+        }
+        return '';
+    }
+
+    function validatePhone(value) {
+        var v = value.trim();
+        if (!v) return 'Please enter a phone number.';
+        // Allow +, digits, spaces, hyphens, parentheses; require 7–15 digits (E.164 range)
+        if (!/^[+]?[\d\s\-()]+$/.test(v)) return 'Phone numbers may only contain digits, spaces, +, - and ().';
+        var digits = v.replace(/\D/g, '');
+        if (digits.length < 7 || digits.length > 15) return 'Please enter a valid phone number (7–15 digits).';
+        return '';
+    }
+
+    function setFieldError(fieldId, message) {
+        var field = document.getElementById(fieldId);
+        var error = field.querySelector('.field-error');
+        var input = field.querySelector('input, select, textarea');
+        if (message) {
+            field.classList.add('has-error');
+            if (error) error.textContent = message;
+            if (input) input.setAttribute('aria-invalid', 'true');
+        } else {
+            field.classList.remove('has-error');
+            if (input) input.removeAttribute('aria-invalid');
+        }
+        return !message;
+    }
+
+    /* Per-step validation. Returns true when the step may be left. */
+    function validateStep(step) {
+        var ok = true;
+
+        if (step === 1) {
+            var serviceChosen = !!form.querySelector('input[name="service"]:checked');
+            ok = setFieldError('field-service', serviceChosen ? '' : 'Please select a service so we can route you to the right partner.') && ok;
+        }
+
+        if (step === 2) {
+            ok = setFieldError('field-orgname',
+                document.getElementById('orgname').value.trim() ? '' : 'Please enter your organization’s name.') && ok;
+            ok = setFieldError('field-industry',
+                document.getElementById('industry').value ? '' : 'Please select your industry.') && ok;
+            var revChosen = !!form.querySelector('input[name="revenue"]:checked');
+            ok = setFieldError('field-revenue', revChosen ? '' : 'Please select a revenue band.') && ok;
+        }
+
+        if (step === 3) {
+            ok = setFieldError('field-name',
+                document.getElementById('fullname').value.trim() ? '' : 'Please enter your full name.') && ok;
+            ok = setFieldError('field-email', validateBusinessEmail(document.getElementById('email').value)) && ok;
+            ok = setFieldError('field-phone', validatePhone(document.getElementById('phone').value)) && ok;
+        }
+
+        if (!ok) {
+            // Move focus to the first invalid control for keyboard/AT users
+            var firstInvalid = form.querySelector('.has-error input, .has-error select, .has-error textarea');
+            if (firstInvalid) firstInvalid.focus();
+        }
+        return ok;
+    }
+
+    /* ---------- Step rendering ---------- */
+    function renderStep() {
+        steps.forEach(function (panel) {
+            panel.classList.toggle('active', Number(panel.dataset.step) === currentStep);
+        });
+
+        // Progress bar + ARIA
+        progressFill.style.width = (currentStep / TOTAL_STEPS * 100) + '%';
+        progressbar.setAttribute('aria-valuenow', String(currentStep));
+        stepLabels.forEach(function (label) {
+            var n = Number(label.dataset.step);
+            label.classList.toggle('done', n < currentStep);
+            if (n === currentStep) label.setAttribute('aria-current', 'step');
+            else label.removeAttribute('aria-current');
+        });
+
+        // Buttons
+        btnBack.hidden = currentStep === 1;
+        btnNext.hidden = currentStep === TOTAL_STEPS;
+        btnSubmit.hidden = currentStep !== TOTAL_STEPS;
+
+        // Focus the step heading region's first focusable control
+        var active = form.querySelector('.form-step.active');
+        var firstControl = active.querySelector('input, select, textarea');
+        if (firstControl) firstControl.focus();
+    }
+
+    btnNext.addEventListener('click', function () {
+        if (!validateStep(currentStep)) return;
+        currentStep = Math.min(currentStep + 1, TOTAL_STEPS);
+        renderStep();
+    });
+
+    btnBack.addEventListener('click', function () {
+        currentStep = Math.max(currentStep - 1, 1);
+        renderStep();
+    });
+
+    // Enter advances steps instead of submitting prematurely
+    form.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' && e.target.tagName !== 'TEXTAREA' && currentStep < TOTAL_STEPS) {
+            e.preventDefault();
+            btnNext.click();
+        }
+    });
+
+    // Live revalidation: clear an error as soon as the user fixes the field
+    form.addEventListener('input', function (e) {
+        var field = e.target.closest('.field');
+        if (field && field.classList.contains('has-error')) {
+            if (e.target.name === 'service') setFieldError('field-service', '');
+            else if (e.target.name === 'revenue') setFieldError('field-revenue', '');
+            else if (e.target.id === 'email') setFieldError('field-email', validateBusinessEmail(e.target.value));
+            else if (e.target.id === 'phone') setFieldError('field-phone', validatePhone(e.target.value));
+            else if (e.target.value.trim()) setFieldError(field.id, '');
+        }
+    });
+
+    /* ---------- Submit & success state ---------- */
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!validateStep(3)) return;
+
+        var data = {
+            service: form.querySelector('input[name="service"]:checked').value,
+            organization: document.getElementById('orgname').value.trim(),
+            industry: document.getElementById('industry').value,
+            revenue: form.querySelector('input[name="revenue"]:checked').value,
+            name: document.getElementById('fullname').value.trim(),
+            email: document.getElementById('email').value.trim(),
+            phone: document.getElementById('phone').value.trim(),
+            notes: document.getElementById('notes').value.trim()
+        };
+
+        // TODO: POST `data` to the firm's CRM / form endpoint, e.g.:
+        // fetch('/api/proposal-request', { method: 'POST',
+        //   headers: { 'Content-Type': 'application/json' },
+        //   body: JSON.stringify(data) });
+
+        // Reference code: date + random suffix, quotable on the phone
+        var now = new Date();
+        var ref = 'BPA-' + now.getFullYear() + String(now.getMonth() + 1).padStart(2, '0') +
+                  String(now.getDate()).padStart(2, '0') + '-' +
+                  Math.random().toString(36).slice(2, 6).toUpperCase();
+        document.getElementById('refCode').textContent = ref;
+
+        // "By tomorrow" wording adjusts around the Saturday holiday (Nepal work week is Sun–Fri)
+        var slaEl = document.getElementById('slaPartner');
+        slaEl.textContent = now.getDay() === 5 /* Friday */ ? 'By Sunday' : 'By tomorrow';
+
+        document.getElementById('successIntro').textContent =
+            'Thank you, ' + data.name.split(' ')[0] + '. Your ' + data.service.toLowerCase() +
+            ' request is on its way to the relevant partner. Here is exactly what happens next:';
+
+        form.hidden = true;
+        var success = document.getElementById('successPanel');
+        success.classList.add('visible');
+        success.focus();   // announce to screen readers (role="status") and move keyboard context
+    });
+
+    renderStep();
+})();
+</script>
+</body>
+</html>

@@ -15,29 +15,94 @@
     <meta property="og:description" content="Premier Chartered Accountancy & Audit Firm in Nepal.">
     <meta property="og:image" content="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&h=630&q=80">
 
-    <!-- FIX #2: JSON-LD @id and url use hyphen domain instead of & -->
+    <!-- Organization + ProfessionalService graph: professional authority + local search -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "AccountingService",
-      "name": "Bijay Pokhrel & Associates, Chartered Accountants",
-      "@id": "https://www.bijaypokhrel-associates.com",
-      "url": "https://www.bijaypokhrel-associates.com",
-      "telephone": "+977-9862145832",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Level 4, Corporate Tower, New Baneshwor",
-        "addressLocality": "Kathmandu",
-        "postalCode": "44600",
-        "addressCountry": "NP"
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday"],
-        "opens": "09:00",
-        "closes": "18:00"
-      },
-      "sameAs": ["https://www.linkedin.com/in/bijay-pokhrel-8b09981b9"]
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://www.bijaypokhrel-associates.com/#organization",
+          "name": "Bijay Pokhrel & Associates, Chartered Accountants",
+          "legalName": "Bijay Pokhrel & Associates",
+          "url": "https://www.bijaypokhrel-associates.com",
+          "foundingDate": "2015",
+          "founder": {
+            "@type": "Person",
+            "@id": "https://www.bijaypokhrel-associates.com/#bijay-pokhrel",
+            "name": "Bijay Pokhrel",
+            "honorificPrefix": "CA",
+            "jobTitle": "Managing Partner",
+            "sameAs": "https://www.linkedin.com/in/bijay-pokhrel-8b09981b9"
+          },
+          "numberOfEmployees": { "@type": "QuantitativeValue", "minValue": 15 },
+          "memberOf": [
+            { "@type": "Organization", "name": "Institute of Chartered Accountants of Nepal (ICAN)" }
+          ],
+          "sameAs": ["https://www.linkedin.com/in/bijay-pokhrel-8b09981b9"]
+        },
+        {
+          "@type": ["ProfessionalService", "AccountingService"],
+          "@id": "https://www.bijaypokhrel-associates.com/#service",
+          "name": "Bijay Pokhrel & Associates, Chartered Accountants",
+          "parentOrganization": { "@id": "https://www.bijaypokhrel-associates.com/#organization" },
+          "url": "https://www.bijaypokhrel-associates.com",
+          "telephone": "+977-9862145832",
+          "email": "info@bijaypokhrel-associates.com",
+          "priceRange": "$$",
+          "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&h=630&q=80",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Level 4, Corporate Tower, New Baneshwor",
+            "addressLocality": "Kathmandu",
+            "addressRegion": "Bagmati Province",
+            "postalCode": "44600",
+            "addressCountry": "NP"
+          },
+          "geo": { "@type": "GeoCoordinates", "latitude": 27.6885, "longitude": 85.3358 },
+          "areaServed": [
+            { "@type": "Country", "name": "Nepal" },
+            { "@type": "City", "name": "Kathmandu" },
+            { "@type": "City", "name": "Lalitpur" },
+            { "@type": "City", "name": "Bhaktapur" }
+          ],
+          "knowsAbout": [
+            "Statutory Audit",
+            "Internal Audit",
+            "NFRS Implementation",
+            "IFRS Financial Reporting",
+            "Corporate Tax Planning",
+            "VAT Compliance",
+            "Transfer Pricing",
+            "Nepal Rastra Bank Directives",
+            "SEBON Regulations",
+            "Risk Management",
+            "Business Valuation",
+            "Due Diligence",
+            "Financial Transparency",
+            "Regulatory Compliance"
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Professional Services",
+            "itemListElement": [
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Statutory & External Audit" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "NFRS Implementation & Reporting" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Tax Advisory & Compliance" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Internal Audit & Risk Advisory" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "NRB & Banking Compliance" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Corporate & Transaction Advisory" } }
+            ]
+          },
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday"],
+            "opens": "09:00",
+            "closes": "18:00"
+          },
+          "sameAs": ["https://www.linkedin.com/in/bijay-pokhrel-8b09981b9"]
+        }
+      ]
     }
     </script>
 
@@ -71,11 +136,22 @@
     }
     </script>
 
-    <!-- FIX #3: Replaced Inter/Manrope with more distinctive Playfair Display + DM Sans pairing -->
+    <!-- Fonts: non-render-blocking load. The stylesheet downloads at low priority
+         (media="print"), then activates onload; display=swap keeps text visible
+         on system-font fallbacks in the meantime. -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap"
+          rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    </noscript>
+    <!-- Font Awesome is decorative (icons only) — defer the same way -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
 
     <style>
         /* =============================================
