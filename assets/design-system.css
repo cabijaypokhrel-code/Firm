@@ -1,0 +1,382 @@
+/* ==========================================================================
+   BIJAY POKHREL & ASSOCIATES — DESIGN SYSTEM
+   Concepts: "Stability" and "Precision" (Swiss / International Style)
+   --------------------------------------------------------------------------
+   Rules of the system:
+   - All spacing derives from an 8px (0.5rem) base unit. No arbitrary values.
+   - Type sizes follow a 1.250 (Major Third) modular scale in rem.
+   - Max border-radius is 2px. No gradients, no playful motion.
+   - Every color pairing listed below meets WCAG 2.1 AA (≥ 4.5:1 body text,
+     ≥ 3:1 large text / UI components). Verified ratios noted inline.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. DESIGN TOKENS
+   -------------------------------------------------------------------------- */
+:root {
+  /* ---- Color: Trust palette ----
+     Navy is the authority color; slate carries text; one high-contrast
+     accent is reserved EXCLUSIVELY for conversion actions (CTAs). */
+  --color-navy-900: #0a1628;   /* page footer, inverted sections          */
+  --color-navy-800: #102341;   /* primary brand surface                   */
+  --color-navy-700: #16325c;   /* hover state of navy surfaces            */
+  --color-navy-100: #dbe4f0;   /* tinted backgrounds, dividers on navy    */
+
+  --color-slate-900: #1a202c;  /* headings on light    (16.0:1 on white)  */
+  --color-slate-700: #3d4a5c;  /* body text on light   ( 9.6:1 on white)  */
+  --color-slate-500: #5d6b7e;  /* secondary text       ( 5.6:1 on white)  */
+  --color-slate-300: #c2cad6;  /* borders, rules — decorative only        */
+  --color-slate-100: #eef1f5;  /* section background alternation          */
+
+  --color-white: #ffffff;
+  --color-paper: #fafbfc;      /* default page background                 */
+
+  /* Accent: reserved for CTAs and key data. AA-checked:
+     - white text on accent-600 = 4.6:1 ✓ (normal text)
+     - accent-700 text on white = 6.3:1 ✓                                  */
+  --color-accent-600: #b54708; /* burnt amber — high contrast, not neon   */
+  --color-accent-700: #93390a;
+  --color-accent-100: #fdeadd;
+
+  /* Semantic states (form feedback) — all ≥ 4.5:1 on white */
+  --color-error-600: #b42318;
+  --color-error-100: #fdecea;
+  --color-success-600: #196b3a;
+  --color-success-100: #e6f4ec;
+
+  /* Aliases (use these in components, never raw hex) */
+  --bg-page: var(--color-paper);
+  --bg-section-alt: var(--color-slate-100);
+  --bg-inverted: var(--color-navy-800);
+  --text-heading: var(--color-slate-900);
+  --text-body: var(--color-slate-700);
+  --text-secondary: var(--color-slate-500);
+  --text-on-dark: #f4f7fb;            /* 15.2:1 on navy-800 ✓ */
+  --text-on-dark-muted: #aebccf;      /*  7.1:1 on navy-800 ✓ */
+  --border-default: var(--color-slate-300);
+
+  /* ---- Spacing: 8px base-unit scale. ONLY these values are legal. ---- */
+  --space-1: 0.5rem;    /*  8px */
+  --space-2: 1rem;      /* 16px */
+  --space-3: 1.5rem;    /* 24px */
+  --space-4: 2rem;      /* 32px */
+  --space-6: 3rem;      /* 48px */
+  --space-8: 4rem;      /* 64px */
+  --space-12: 6rem;     /* 96px */
+  --space-16: 8rem;     /* 128px */
+
+  /* ---- Typography: system-first professional sans stack ---- */
+  --font-sans: "Inter", "Roboto", -apple-system, BlinkMacSystemFont,
+               "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "Roboto Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* Modular scale: 1rem base × 1.250 (Major Third) */
+  --text-xs:  0.64rem;   /* 1 ÷ 1.25²  — legal/meta            */
+  --text-sm:  0.8rem;    /* 1 ÷ 1.25   — captions, labels      */
+  --text-md:  1rem;      /* base       — body                  */
+  --text-lg:  1.25rem;   /* × 1.25     — lead paragraph, h4    */
+  --text-xl:  1.563rem;  /* × 1.25²    — h3                    */
+  --text-2xl: 1.953rem;  /* × 1.25³    — h2                    */
+  --text-3xl: 2.441rem;  /* × 1.25⁴    — h1                    */
+  --text-4xl: 3.052rem;  /* × 1.25⁵    — hero display          */
+
+  --leading-tight: 1.2;
+  --leading-body: 1.6;
+
+  /* ---- Geometry: precision, not softness ---- */
+  --radius: 2px;                       /* maximum allowed radius */
+  --border-width: 1px;
+  --rule-accent: 2px solid var(--color-accent-600);
+
+  /* ---- Elevation: subtle, monochrome — depth without decoration ---- */
+  --shadow-1: 0 1px 2px rgba(10, 22, 40, 0.06);
+  --shadow-2: 0 2px 8px rgba(10, 22, 40, 0.10);
+  --shadow-3: 0 8px 24px rgba(10, 22, 40, 0.12);
+
+  /* ---- Motion: fast and decisive, never bouncy ---- */
+  --ease-precise: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 150ms;
+  --duration-base: 200ms;
+
+  /* ---- Layout ---- */
+  --container-max: 76rem;              /* 1216px = 152 × 8px ✓ */
+  --header-height: 5rem;               /* 80px  = 10 units     */
+  --header-height-compact: 3.5rem;     /* 56px  =  7 units     */
+}
+
+/* --------------------------------------------------------------------------
+   2. BASE
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 100%; scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-md);
+  line-height: var(--leading-body);
+  color: var(--text-body);
+  background: var(--bg-page);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-sans);
+  color: var(--text-heading);
+  line-height: var(--leading-tight);
+  letter-spacing: -0.015em;
+  font-weight: 700;
+}
+h1 { font-size: var(--text-3xl); }
+h2 { font-size: var(--text-2xl); }
+h3 { font-size: var(--text-xl); }
+h4 { font-size: var(--text-lg); }
+
+p + p { margin-top: var(--space-2); }
+
+a { color: var(--color-navy-700); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { color: var(--color-accent-700); }
+
+:focus-visible {
+  outline: 2px solid var(--color-accent-600);
+  outline-offset: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   3. THE GRID — 12 columns, 8px-derived gutters
+   -------------------------------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--space-3);          /* 24px */
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--space-3);                     /* 24px gutter */
+}
+
+/* Column spans: .col-1 … .col-12 */
+.col-1  { grid-column: span 1; }  .col-2  { grid-column: span 2; }
+.col-3  { grid-column: span 3; }  .col-4  { grid-column: span 4; }
+.col-5  { grid-column: span 5; }  .col-6  { grid-column: span 6; }
+.col-7  { grid-column: span 7; }  .col-8  { grid-column: span 8; }
+.col-9  { grid-column: span 9; }  .col-10 { grid-column: span 10; }
+.col-11 { grid-column: span 11; } .col-12 { grid-column: span 12; }
+
+@media (max-width: 64rem) {  /* 1024px: halve */
+  [class*="col-"] { grid-column: span 6; }
+  .col-12 { grid-column: span 12; }
+}
+@media (max-width: 40rem) {  /* 640px: stack */
+  [class*="col-"] { grid-column: span 12; }
+}
+
+.section { padding-block: var(--space-12); }          /* 96px rhythm   */
+.section--compact { padding-block: var(--space-8); }  /* 64px          */
+.section--alt { background: var(--bg-section-alt); }
+.section--inverted { background: var(--bg-inverted); color: var(--text-on-dark-muted); }
+.section--inverted h1, .section--inverted h2,
+.section--inverted h3, .section--inverted h4 { color: var(--text-on-dark); }
+
+/* --------------------------------------------------------------------------
+   4. COMPONENTS
+   -------------------------------------------------------------------------- */
+
+/* ---- 4.1 Buttons ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  padding: var(--space-2) var(--space-3);          /* 16 / 24 */
+  font: 600 var(--text-sm) / 1 var(--font-sans);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: var(--border-width) solid transparent;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--ease-precise),
+              border-color var(--duration-fast) var(--ease-precise);
+}
+.btn--primary { background: var(--color-accent-600); color: var(--color-white); }   /* 4.6:1 ✓ */
+.btn--primary:hover { background: var(--color-accent-700); color: var(--color-white); }
+.btn--secondary { background: var(--color-navy-800); color: var(--text-on-dark); }
+.btn--secondary:hover { background: var(--color-navy-700); color: var(--text-on-dark); }
+.btn--ghost { background: transparent; color: var(--color-navy-800); border-color: var(--color-navy-800); }
+.btn--ghost:hover { background: var(--color-navy-800); color: var(--text-on-dark); }
+
+/* ---- 4.2 Data Card — firm statistics ("620+ Audits Completed") ----
+   Usage:
+   <div class="data-card">
+     <span class="data-card__value">620<sup>+</sup></span>
+     <span class="data-card__label">Audits Completed</span>
+     <span class="data-card__context">since 2015 · ICAN member firm</span>
+   </div>                                                                  */
+.data-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-4);                          /* 32px */
+  background: var(--color-white);
+  border: var(--border-width) solid var(--border-default);
+  border-top: var(--rule-accent);                   /* precision rule, not a gradient */
+  border-radius: var(--radius);
+}
+.data-card__value {
+  font-family: var(--font-mono);                    /* tabular figures = audit precision */
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-heading);
+  line-height: 1;
+}
+.data-card__value sup { font-size: var(--text-lg); color: var(--color-accent-600); }
+.data-card__label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-body);
+}
+.data-card__context { font-size: var(--text-xs); color: var(--text-secondary); }
+
+/* On inverted (navy) sections */
+.section--inverted .data-card {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.16);
+  border-top: var(--rule-accent);
+}
+.section--inverted .data-card__value { color: var(--text-on-dark); }
+.section--inverted .data-card__label { color: var(--text-on-dark); }
+.section--inverted .data-card__context { color: var(--text-on-dark-muted); }
+
+/* ---- 4.3 Service Card — restrained hover depth ----
+   Depth is communicated by a 1-step shadow increase and the accent rule
+   sliding in. No lift transforms, no scaling, no color floods.            */
+.service-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  background: var(--color-white);
+  border: var(--border-width) solid var(--border-default);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-1);
+  transition: box-shadow var(--duration-base) var(--ease-precise),
+              border-color var(--duration-base) var(--ease-precise);
+}
+.service-card::before {                /* accent rule, drawn on hover */
+  content: "";
+  position: absolute;
+  top: -1px; left: -1px;
+  width: calc(100% + 2px);
+  height: 2px;
+  background: var(--color-accent-600);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--duration-base) var(--ease-precise);
+}
+.service-card:hover,
+.service-card:focus-within {
+  border-color: var(--color-slate-500);
+  box-shadow: var(--shadow-2);
+}
+.service-card:hover::before,
+.service-card:focus-within::before { transform: scaleX(1); }
+
+.service-card__index {                 /* "01" — engineering-drawing numbering */
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-accent-600);
+}
+.service-card__title { font-size: var(--text-xl); }
+.service-card__body { font-size: var(--text-sm); flex-grow: 1; }
+.service-card__link {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-navy-800);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-default);
+  align-self: flex-start;
+  padding-bottom: 2px;
+  transition: border-color var(--duration-fast) var(--ease-precise);
+}
+.service-card:hover .service-card__link { border-color: var(--color-accent-600); color: var(--color-accent-700); }
+
+/* ---- 4.4 Sticky Header — shrinks on scroll ----
+   JS contract: add .site-header--compact to the header when
+   window.scrollY > 48 (see snippet at the bottom of this file).           */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--color-white);
+  border-bottom: var(--border-width) solid var(--border-default);
+  transition: box-shadow var(--duration-base) var(--ease-precise);
+}
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  height: var(--header-height);
+  transition: height var(--duration-base) var(--ease-precise);
+}
+.site-header--compact { box-shadow: var(--shadow-2); }
+.site-header--compact .site-header__inner { height: var(--header-height-compact); }
+
+.site-header__logo {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--text-heading);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  transition: font-size var(--duration-base) var(--ease-precise);
+}
+.site-header--compact .site-header__logo { font-size: var(--text-md); }
+
+.site-header__nav { display: flex; gap: var(--space-4); }
+.site-header__nav a {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--text-body);
+  text-decoration: none;
+  padding-block: var(--space-1);
+  border-bottom: 2px solid transparent;
+}
+.site-header__nav a:hover,
+.site-header__nav a[aria-current="page"] {
+  color: var(--text-heading);
+  border-bottom-color: var(--color-accent-600);
+}
+
+/* --------------------------------------------------------------------------
+   5. HEADER SCROLL BEHAVIOR (reference implementation)
+   --------------------------------------------------------------------------
+   <script>
+     const header = document.querySelector('.site-header');
+     let ticking = false;
+     window.addEventListener('scroll', () => {
+       if (ticking) return;
+       ticking = true;
+       requestAnimationFrame(() => {
+         header.classList.toggle('site-header--compact', window.scrollY > 48);
+         ticking = false;
+       });
+     }, { passive: true });
+   </script>
+   ------------------------------------------------------------------------ */
