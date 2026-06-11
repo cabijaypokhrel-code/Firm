@@ -153,6 +153,7 @@ legend { font-size: 1.25rem; font-weight: 700; color: var(--slate-900); margin-b
 
 <div class="form-shell">
     <header>
+        <p style="margin-bottom: var(--space-2);"><a href="index.html" style="font-size:0.8rem;color:var(--slate-500);text-decoration:none;">&larr; Bijay Pokhrel &amp; Associates</a></p>
         <h1>Request a Proposal</h1>
         <p>Three short steps. We only ask what we need to scope your engagement and fee.</p>
         <span class="sla-note">A senior partner responds within 1 business day.</span>
@@ -410,6 +411,26 @@ legend { font-size: 1.25rem; font-weight: 700; color: var(--slate-900); margin-b
         }
         return ok;
     }
+
+    /* ---------- Funnel pre-fill from query params ----------
+       Sector/service CTAs link here as proposal.html?service=…&industry=…
+       so the visitor never re-enters what the page they came from knew. */
+    (function prefillFromQuery() {
+        var params = new URLSearchParams(window.location.search);
+        var svc = params.get('service');
+        if (svc) {
+            form.querySelectorAll('input[name="service"]').forEach(function (radio) {
+                if (radio.value === svc) radio.checked = true;
+            });
+        }
+        var ind = params.get('industry');
+        if (ind) {
+            var sel = document.getElementById('industry');
+            Array.prototype.forEach.call(sel.options, function (opt) {
+                if (opt.text === ind) sel.value = opt.value;
+            });
+        }
+    })();
 
     /* ---------- Step rendering ---------- */
     function renderStep() {
