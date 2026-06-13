@@ -1,0 +1,12 @@
+# Netlify _redirects
+# Redirect any URL without .html to the .html version (optional clean URLs)
+# Uncomment the lines below if you want /audit-assurance to resolve to audit-assurance.html etc.
+# /audit-assurance    /audit-assurance.html    200
+# /tax-compliance     /tax-compliance.html     200
+# /advisory           /advisory.html           200
+# /team               /team.html               200
+# /industries         /industry-banking.html   200
+# /proposal           /proposal.html           200
+
+# Fallback: serve index for any unmatched route
+/*    /index.html    200
