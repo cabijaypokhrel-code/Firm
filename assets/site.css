@@ -293,3 +293,25 @@ a.tile:hover, a.tile:focus-visible { border-color: var(--color-accent-600); box-
 .mt-2 { margin-top: var(--space-2); }
 .mt-4 { margin-top: var(--space-4); }
 .mt-6 { margin-top: var(--space-6); }
+
+/* ---- Sticky mobile CTA bar ---- */
+.mobile-cta-bar {
+  display: none;
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 100;
+  background: var(--color-white);
+  border-top: var(--border-width) solid var(--border-default);
+  box-shadow: 0 -4px 16px rgba(0,0,0,0.08);
+  padding: var(--space-2) var(--space-3);
+  gap: var(--space-2);
+}
+.mobile-cta-bar .btn { flex: 1; text-align: center; font-size: var(--text-xs); padding: 0.75rem var(--space-1); }
+.mobile-cta-bar .btn--wa {
+  background: #25d366; color: #fff; border-color: #25d366;
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.35rem;
+}
+.mobile-cta-bar .btn--wa:hover { background: #1ebe5d; border-color: #1ebe5d; }
+@media (max-width: 48rem) {
+  .mobile-cta-bar { display: flex; }
+  /* Prevent footer from sitting behind the bar */
+  .site-footer { padding-bottom: calc(var(--space-8) + 4rem); }
+}
